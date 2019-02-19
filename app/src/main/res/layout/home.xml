@@ -67,6 +67,19 @@
 
                     </LinearLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/mBottomLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.whatsapp.HomePagerSlidingTabStrip
+                        android:visibility="gone"
+                        android:id="@+id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
                 <FrameLayout
                     android:id="@+id/pager_holder"
                     android:layout_width="match_parent"
@@ -79,22 +92,7 @@
 
                 </FrameLayout>
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:id="@+id/mBottomLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <android.support.design.widget.TabLayout
-                        android:visibility="gone"
-                        whatsapp:tabTextColor="@color/delta_white"
-                        whatsapp:tabIndicator="@color/delta_white50"
-                        android:layout_gravity="bottom"
-                        android:id="@+id/tabs"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
 
             </LinearLayout>
 

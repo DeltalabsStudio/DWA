@@ -81,9 +81,7 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
             for (int i = 0; i < mImageIds.length; i++) {
                 final ImageView mImage = (ImageView) findViewById(mImageIds[i]);
                 FloatingActionButton mFab = (FloatingActionButton)findViewById(mFabIds[i]);
-               // Picasso.with(mContext).load(iconPath+mIconName[i]+fileType).into(mImage);
-               // Picasso.with(mContext).load(iconPath+mIconName[i]+fileType).into(mFab);
-                Icons.isOwnIcons(mContext, i, mImage, mFab);
+                Icons.customIcons(mContext, i, mImage, mFab);
                 mFab.setOnClickListener(this);
 
                 if(mFab.getId()==mFabIds[1]){

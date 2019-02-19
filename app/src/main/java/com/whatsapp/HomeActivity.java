@@ -35,6 +35,7 @@ import id.delta.whatsapp.dialog.DialogAbout;
 import id.delta.whatsapp.dialog.DialogAdd;
 import id.delta.whatsapp.home.stock.CurvedNavigationView;
 import id.delta.whatsapp.home.stock.NavigationDrawer;
+import id.delta.whatsapp.implement.OnPageChangeListener;
 import id.delta.whatsapp.implement.PageListener;
 import id.delta.whatsapp.status.FragmentStatus;
 import id.delta.whatsapp.ui.views.MarqueeToolbar;
@@ -60,7 +61,7 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
     public NavigationDrawer mNavigationDrawer;
 
     ViewPager mPager;
-    TabLayout tabs;
+    HomePagerSlidingTabStrip tabs;
     private SimpleSideDrawer mNav;
 
     public CurvedNavigationView mCurvedNavigation;
@@ -75,9 +76,27 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         mPager.setAdapter(new HomeTabsAdapter(getSupportFragmentManager()));
         mPager.setCurrentItem(1);
         mPager.setOffscreenPageLimit(3);
-        tabs = (TabLayout) findViewById(R.id.tabs);
-        tabs.setBackgroundColor(Colors.setWarnaPrimer());
-        tabs.setupWithViewPager(mPager);
+
+        tabs = (HomePagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabs.setViewPager(mPager);
+        tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+               // Tools.showToast(String.valueOf(i));
+                new OnPageChangeListener(HomeActivity.this, i).onPageListener();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
+
         initAvatar();
         initToolbar();
         initFragment();
@@ -114,12 +133,11 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
        // if(Tools.checkInternetNow())Tools.showToast("Has Internet");
 
         //Anti DCRC Ampuh
-        //setSign(this, "6e226e8c484719da8482f629dbebde5a4cef036c");
+        //setSign(this, "9622e43e79a54fb67d3fe58ca55444666a32e0a8");
 
         mCurvedNavigation = findViewById(Tools.intId("mCurvedNavigation"));
       //  mCurvedNavigation.onStartSelected();
-        new PageListener(this, mPager).onSelectPage();
-
+      //  new PageListener(this, mPager).onSelectPage();
 
     }
 

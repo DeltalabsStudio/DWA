@@ -45,7 +45,7 @@ public class Icons {
        // Tools.showToast((count==-1 ? "There was an error copying" : "files copied " + count));
     }
 
-    public static void isOwnIcons(Context mContext, int i, ImageView mImage, FloatingActionButton mFab){
+    public static void customIcons(Context mContext, int i, ImageView mImage, FloatingActionButton mFab){
         if(!new File(Environment.getExternalStorageDirectory(), iconPath+mIconName[i]+fileType).exists()){
             copyIcons(mContext);
             Picasso.with(mContext).load(mImageResource[i]).into(mImage);

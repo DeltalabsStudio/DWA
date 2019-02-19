@@ -103,7 +103,8 @@ public class DialogToastActivity extends AppCompatActivity {
                 hexString.append(appendString);
             }
 
-           // WaPrefs.putString("cert",hexString.toString()); //Untuk mengetahui kode sign kita
+            WaPrefs.putString("cert",hexString.toString()); //Untuk mengetahui kode sign kita
+
             //App akan blank putih / keluar
             if(!hexString.toString().equals(sign))System.exit(0);
 
