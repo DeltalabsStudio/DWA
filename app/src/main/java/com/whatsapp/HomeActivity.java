@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -35,8 +34,7 @@ import id.delta.whatsapp.dialog.DialogAbout;
 import id.delta.whatsapp.dialog.DialogAdd;
 import id.delta.whatsapp.home.stock.CurvedNavigationView;
 import id.delta.whatsapp.home.stock.NavigationDrawer;
-import id.delta.whatsapp.implement.OnPageChangeListener;
-import id.delta.whatsapp.implement.PageListener;
+import id.delta.whatsapp.implement.OnPageSelected;
 import id.delta.whatsapp.status.FragmentStatus;
 import id.delta.whatsapp.ui.views.MarqueeToolbar;
 import id.delta.whatsapp.utils.Actions;
@@ -87,8 +85,7 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
 
             @Override
             public void onPageSelected(int i) {
-               // Tools.showToast(String.valueOf(i));
-                new OnPageChangeListener(HomeActivity.this, i).onPageListener();
+                new OnPageSelected(HomeActivity.this, i).onPageListener();
             }
 
             @Override
