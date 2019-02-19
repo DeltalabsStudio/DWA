@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:whatsapp="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:onClick="a"
+        android:id="@+id/mEditText"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="+62"
+        android:inputType="phone"
+        android:textSize="30sp"
+        android:background="@null"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp" >
+
+        <requestFocus/>
+
+    </EditText>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.0px"
+        android:background="?android:listDivider"/>
+
+    <LinearLayout
+        android:background="@color/delta_card"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:onClick="inputNumber"
+                    android:tag="1"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="1"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="2"
+                    android:onClick="inputNumber"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="2"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="3"
+                    android:onClick="inputNumber"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="3"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:src="@drawable/delta_ic_phonecall"
+                    android:id="@+id/mPhoneCall"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="4"
+                    android:onClick="inputNumber"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="4"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="5"
+                    android:onClick="inputNumber"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="5"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="6"
+                    android:onClick="inputNumber"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="6"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:src="@drawable/delta_ic_video"
+                    android:id="@+id/mVideoCall"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="7"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:onClick="inputNumber"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="7"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="8"
+                    android:onClick="inputNumber"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="8"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="9"
+                    android:onClick="inputNumber"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="9"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:src="@drawable/ic_action_call"
+                    android:id="@+id/mVoiceCall"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="+"
+                    android:onClick="inputNumber"
+                    android:src="@drawable/delta_ic_add"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:onClick="inputNumber"
+                    android:tag="0"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/delta_white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:tag="\#"
+                    android:id="@+id/mDelete"
+                    android:src="@drawable/delta_ic_backspace"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content">
+
+                <id.delta.whatsapp.ui.views.FloatingActionButton
+                    android:id="@+id/mChat"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/delta_ic_chat"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

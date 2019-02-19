@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Main"/>
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_custom_icons"
+        android:key="key_custom_icons"
+        android:summary="Replace icon in WhatsApp/DELTABackup/icons/ with your icons 48px"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:enabled="false"
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/title_default_home"
+        android:key="key_default_home"
+        android:summaryOn="Delta-Wa Style"
+        android:summaryOff="WhatsApp Stock"
+        android:defaultValue="false" />
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_home_background_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_home_background"
+        android:summary="%s"
+        android:defaultValue="0xfffafafa"/>
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_enable_wallpaper"
+        android:key="key_enable_wallpaper"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
+    <Preference
+        android:layout="@layout/delta_preference_layout"
+        android:dependency="key_enable_wallpaper"
+        android:key="key_pref_wallpaper"
+        android:title="@string/pref_home_wallpaper"
+        android:summary="@string/sum_home_wallpaper"/>
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_toolbar_title"
+        android:key="key_toolbar_title"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_enable_subtitle"
+        android:key="key_toolbar_subtitle"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Drawer"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_drawer_bg_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_drawer_background"
+        android:summary="%s"
+        android:defaultValue="0xffffffff"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_drawer_title_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_drawer_title"
+        android:summary="%s"
+        android:defaultValue="0xFF474751"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_drawer_label_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_drawer_label"
+        android:summary="%s"
+        android:defaultValue="0xFF474751"/>
+
+    <Preference
+        android:layout="@layout/delta_preference_layout"
+        android:key="key_pref_cover"
+        android:title="@string/pref_home_cover"
+        android:summary="@string/sum_home_cover"/>
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_enable_cover"
+        android:key="key_enable_cover"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Floating Action Button"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_fab_color_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_fab_color"
+        android:summary="%s"
+        android:defaultValue="0xFF558b2f"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_fabicon_color_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_fabicon_color"
+        android:summary="%s"
+        android:defaultValue="0xFFffffff"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_navicon_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_navicon_color"
+        android:summary="%s"
+        android:defaultValue="0xFF558b2f"/>
+
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Status"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_status_title_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_statustitle_color"
+        android:summary="%s"
+        android:defaultValue="0xFF474751"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_status_seen_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_seen_color"
+        android:summary="%s"
+        android:defaultValue="0xffbbbec4"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_status_unseen_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_unseen_color"
+        android:summary="%s"
+        android:defaultValue="0xFF558b2f"/>
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="List"/>
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_disable_divider"
+        android:key="key_disable_divider"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_enable_card"
+        android:key="key_enable_card"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:dependency="key_enable_card"
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_transparent_card"
+        android:key="key_card_transparent"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="true" />
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_card_color_picker"
+        android:dependency="key_enable_card"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_card_color"
+        android:summary="%s"
+        android:defaultValue="0xff9e9e9e"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_row_contactname_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_contactname_color"
+        android:summary="%s"
+        android:defaultValue="0xFF474751"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_row_message_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_message_color"
+        android:summary="%s"
+        android:defaultValue="0x80000000"/>
+
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_row_date_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_date_color"
+        android:summary="%s"
+        android:defaultValue="0x80000000"/>
+
+</PreferenceScreen>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="delta_darkbg">#ff263238</color>
+    <color name="delta_primarycolor">#ff075e54</color>
+    <color name="delta_accentcolor">#FF558b2f</color>
+    <color name="delta_darkicon">#474751</color>
+    <color name="delta_toolbar">#fffafafa</color>
+    <color name="delta_white">#ffffffff</color>
+    <color name="delta_black">#ff000000</color>
+    <color name="delta_white50">#80ffffff</color>
+    <color name="delta_black50">#80000000</color>
+    <color name="delta_outcolor">#ffe1ffc7</color>
+    <color name="delta_shadow">#33000000</color>
+    <color name="delta_pressed">#ffcceeff</color>
+    <color name="delta_transparent">#00000000</color>
+    <color name="delta_lightbg">#fffafafa</color>
+    <color name="twitter_night">#ff141d26</color>
+    <color name="twitter_primary">#ff243447</color>
+    <color name="twitter_accent">#ffc51f5d</color>
+    <color name="delta_searchmask">#80aeaeae</color>
+</resources>

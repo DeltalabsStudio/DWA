@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<id.delta.whatsapp.home.stock.CurvedNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mCurvedNavigation"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <id.delta.whatsapp.ui.views.CurvedBottom
+        android:background="@color/colorPrimary"
+        android:layout_gravity="bottom"
+        android:id="@+id/mCurved"
+        android:layout_width="match_parent"
+        android:layout_height="56.0dp">
+
+        <LinearLayout
+            android:visibility="invisible"
+            android:id="@+id/mOne"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/iOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="Chats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/mTwo"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/iTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="Statuses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/mThree"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/iThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="Calls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </id.delta.whatsapp.ui.views.CurvedBottom>
+
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/fOne"
+            android:visibility="visible"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content">
+
+            <id.delta.whatsapp.ui.views.FloatingActionButton
+                android:layout_gravity="center"
+                android:id="@+id/mFabOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fTwo"
+            android:visibility="invisible"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content">
+
+            <id.delta.whatsapp.ui.views.FloatingActionButton
+                android:layout_gravity="center"
+                android:id="@+id/mFabTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fThree"
+            android:visibility="invisible"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content">
+
+            <id.delta.whatsapp.ui.views.FloatingActionButton
+                android:layout_gravity="center"
+                android:id="@+id/mFabThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</id.delta.whatsapp.home.stock.CurvedNavigationView>

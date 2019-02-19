@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<id.delta.whatsapp.home.content.HomeNavigationDrawer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
+    android:layout_width="300dip"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:focusable="true">
+    <!--android:elevation="16.0dip"-->
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8.0dip"
+                android:orientation="vertical">
+
+                <com.whatsapp.ThumbnailButton
+                    android:background="@color/delta_transparent"
+                    android:id="@+id/profile_picture"
+                    android:layout_width="64.0dip"
+                    android:layout_height="64.0dip"
+                    android:layout_margin="16.0dip"
+                    android:src="@drawable/avatar_contact" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16.0dip"
+                    android:layout_marginStart="16.0dip"
+                    android:orientation="vertical">
+
+                    <id.delta.whatsapp.ui.views.AutoTextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deltalabs Studio"
+                        android:textColor="#ff000000"
+                        android:textSize="14.0dip"
+                        android:textStyle="bold" />
+
+                    <id.delta.whatsapp.ui.views.AutoTextView
+                        android:id="@+id/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4.0dip"
+                        android:text="+62 8 22 0000-0000"
+                        android:textColor="#ff555555"
+                        android:textSize="12.0dip" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_alignParentBottom="true"
+                    android:background="?android:listDivider" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header"
+                android:orientation="vertical">
+
+                <id.delta.whatsapp.home.content.HomeNavigationDrawerItem
+                    android:id="@+id/archived_chats"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    custom:icon="@drawable/ic_action_archive"
+                    custom:label="@string/archived_chats" />
+
+                <id.delta.whatsapp.home.content.HomeNavigationDrawerItem
+                    android:id="@+id/starred_messages"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    custom:icon="@drawable/ic_action_star"
+                    custom:label="@string/starred_messages" />
+
+                <id.delta.whatsapp.home.content.HomeNavigationDrawerItem
+                    android:id="@+id/whatsapp_web"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    custom:icon="@drawable/notify_web_client_connected"
+                    custom:label="@string/whatsapp_web" />
+
+                <id.delta.whatsapp.home.stock.NavigationDrawerItem
+                    android:id="@+id/nav_group"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    custom:icon="@drawable/delta_ic_addgroup"
+                    custom:label="@string/menuitem_groupchat" />
+
+                <id.delta.whatsapp.home.stock.NavigationDrawerItem
+                    android:id="@+id/nav_broadcast"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    custom:icon="@drawable/delta_ic_notif"
+                    custom:label="@string/menuitem_list" />
+
+                <View
+                    android:layout_width="1.0dip"
+                    android:layout_height="8.0dip" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="?android:listDivider" />
+
+                <View
+                    android:layout_width="1.0dip"
+                    android:layout_height="8.0dip" />
+
+                <id.delta.whatsapp.home.content.HomeNavigationDrawerItem
+                    android:id="@+id/nav_privacy"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    custom:icon="@drawable/delta_ic_security"
+                    custom:label="@string/delta_privacy" />
+
+                <id.delta.whatsapp.home.content.HomeNavigationDrawerItem
+                    android:id="@+id/nav_settings"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dip"
+                    android:background="?android:attr/selectableItemBackground"
+                    custom:icon="@drawable/delta_ic_settings"
+                    custom:label="@string/delta_settings" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="?android:listDivider"
+        android:layout_alignParentRight="true"/>
+
+</id.delta.whatsapp.home.content.HomeNavigationDrawer>

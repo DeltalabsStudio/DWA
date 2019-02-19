@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/statuses_recyclerview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center"
+        android:layout_width="280.0dp"
+        android:layout_height="wrap_content">
+
+        <id.delta.whatsapp.ui.views.RestoreButton
+            android:textColor="@color/delta_white"
+            style="@style/RegistrationButton"
+            android:gravity="center"
+            android:layout_width="0.0dp"
+            android:layout_weight="1"
+            android:layout_height="36.0dp"
+            android:layout_marginTop="14.0dip"
+            android:layout_marginRight="8.0dp"
+            android:layout_marginEnd="8.0dp"
+            android:text="@string/pref_restore_data"/>
+
+        <id.delta.whatsapp.ui.views.PermissionButton
+            android:layout_marginLeft="8.0dp"
+            android:layout_marginStart="8.0dp"
+            android:textColor="@color/delta_white"
+            style="@style/RegistrationButton"
+            android:backgroundTint="@color/twitter_accent"
+            android:gravity="center"
+            android:layout_width="0.0dip"
+            android:layout_weight="1"
+            android:layout_height="36.0dp"
+            android:layout_marginTop="14.0dip"
+            android:text="@string/permission_setting"/>
+    </LinearLayout>
+
+
+    <ListView
+        android:visibility="visible"
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <id.delta.whatsapp.ui.views.FunkyHeader
+        android:visibility="gone"
+        android:id="@+id/wave_head"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:scaleType="centerCrop"
+        app:tint="#88880E4F" />
+
+    <include android:visibility="gone" layout="@layout/statuses_row"/>
+
+    <FrameLayout
+        android:id="@+id/stock_statuses_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+</LinearLayout>

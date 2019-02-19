@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="id.delta.whatsapp">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name="com.whatsapp.AppShell"
+        android:allowBackup="true"
+        android:icon="@mipmap/launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.App"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.whatsapp.Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:theme="@style/Theme.App.Home" android:name=".activities.MainActivity" />
+        <activity android:name="com.whatsapp.Conversation" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:theme="@style/Theme.App.Home" android:label="@string/delta_settings" android:name=".activities.SettingsActivity" />
+        <activity android:theme="@style/Theme.App.Home" android:label="WhatsApp" android:name="com.whatsapp.HomeActivity" />
+        <activity android:name="com.whatsapp.wallpaper.GalleryWallpaperPreview" />
+        <activity android:name="com.whatsapp.NewGroup" />
+        <activity android:theme="@style/Theme.App.Home" android:name=".activities.DialerActivity" />
+        <activity android:theme="@style/Theme.App.Home" android:name="com.whatsapp.wallpaper.CoverWallpaperPreview" />
+        <activity android:theme="@style/Theme.App.Home" android:label="@string/delta_privacy" android:name=".activities.PrivacyActivity" />
+        <activity android:name="com.whatsapp.TextStatusComposerActivity" />
+        <activity android:name="com.whatsapp.ArchivedConversationsActivity" />
+        <activity android:label="@string/delta_report" android:name=".activities.ProblemActivity" />
+        <activity android:name=".split.MainSpitActivity" />
+        <activity android:name=".split.SplittingActivity" />
+        <activity android:name=".activities.VideoActivity"/>
+        <activity android:name="com.whatsapp.camera.CameraActivity" />
+    </application>
+
+</manifest>

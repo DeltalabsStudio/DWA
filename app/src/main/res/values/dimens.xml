@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="input_layout_buttons_positioning_margin">4.0dp</dimen>
+    <dimen name="input_layout_buttons_size">47.0dip</dimen>
+    <dimen name="input_layout_buttons_margin">0dp</dimen>
+</resources>

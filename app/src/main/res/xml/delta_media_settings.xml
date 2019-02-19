@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Image/Videos"/>
+
+    <id.delta.whatsapp.views.preference.SeekBarPreference
+        android:layout="@layout/delta_preference_layout"
+        android:defaultValue="1"
+        android:max="18"
+        android:summary="%s MB"
+        android:key="key_image_resolution"
+        android:title="@string/pref_image_resolution"/>
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_fiveminutes_status"
+        android:key="key_fiveminutes_status"
+        android:summary="@string/sum_fiveminutes_status"
+        android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Backup"/>
+
+    <id.delta.whatsapp.views.preference.ActionPreference
+        android:key="key_backup_data"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_backup_data"
+        android:summary="@string/sum_backup_data"/>
+
+    <id.delta.whatsapp.views.preference.ActionPreference
+        android:key="key_restore_data"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_restore_data"
+        android:summary="@string/sum_restore_data"/>
+
+    <id.delta.whatsapp.views.preference.ActionPreference
+        android:key="key_backup_theme"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_backup_theme"
+        android:summary="@string/sum_backup_theme"/>
+
+    <id.delta.whatsapp.views.preference.ActionPreference
+        android:key="key_restore_theme"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_restore_theme"
+        android:summary="@string/sum_restore_theme"/>
+
+</PreferenceScreen>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Header"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_chat_title_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_chat_title"
+        android:summary="%s"
+        android:defaultValue="0xFF474751"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_chat_subtitle_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_chat_subtitle"
+        android:summary="%s"
+        android:defaultValue="0x80000000"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_chat_iconback_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_chat_icon"
+        android:summary="%s"
+        android:defaultValue="0xFFffffff"/>
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Entry"/>
+
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/title_chat_input_enable"
+        android:key="key_chat_input_enable"
+        android:summaryOn="@string/sum_enable"
+        android:summaryOff="@string/sum_disable"
+        android:defaultValue="true" />
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:key="key_chat_input_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_chat_input_background"
+        android:summary="%s"
+        android:defaultValue="0xFFffffff"/>
+
+
+
+</PreferenceScreen>

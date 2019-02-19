@@ -1,0 +1,123 @@
+<resources>
+    <string name="delta_settings">DELTA Settings</string>
+    <string-array name="theme_entry">
+        <item>Light Theme</item>
+        <item>Dark Theme</item>
+        <item>Transparent Theme</item>
+        <item>Custom Color Theme</item>
+    </string-array>
+
+    <string-array name="theme_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string name="delta_privacy">Private</string>
+    <string name="nav_menu">Menu</string>
+    <string name="nav_calls">Calls</string>
+    <string name="nav_add">Add</string>
+    <string name="nav_chat">Chats</string>
+    <string name="deltalabs">Deltalabs Studio</string>
+    <string name="primary_color">Primary Color</string>
+    <string name="accent_color">Accent Color</string>
+    <string name="menu_restart">Restart</string>
+    <string name="menu_reset">Clear Settings</string>
+    <string name="menu_about">About</string>
+    <string name="app_info">THIS APPLICATION IS NOT FOR SALE\n\nDELTA-WA is a modified WhatsApp application. If anything happens that causes your Account or file to be in trouble, we as Modder are not fully responsible. We only make modifications in terms of appearance and some additional features in the application. Modder does not take data (conversation and media) by force.</string>
+    <string name="pref_home_wallpaper">Pick Home Wallpaper</string>
+    <string name="sum_home_wallpaper">Pick image to home wallpaper</string>
+    <string name="pref_enable_wallpaper">Home Wallpaper</string>
+    <string name="pref_home_settings">Home Settings</string>
+    <string name="sum_home_settings">Home ui configurations</string>
+    <string name="pref_enable_cover">Cover Picture on Drawer</string>
+    <string name="pref_home_cover">Pick Cover Picture</string>
+    <string name="sum_home_cover">Pick image to cover picture</string>
+    <string name="pref_contactname_color">List Item Contact Name</string>
+    <string name="pref_message_color">List Item Message</string>
+    <string name="pref_toolbar_title">Show Name as Title</string>
+    <string name="pref_enable_subtitle">Show Status as Subtitle</string>
+    <string name="pref_statustitle_color">Status Name Color</string>
+    <string name="pref_seen_color">Status Seen Color</string>
+    <string name="pref_unseen_color">Status Unseen Color</string>
+    <string name="pref_enable_antirevoke">Anti Revoke Message</string>
+    <string name="pref_enable_alwaysonline">Always Online</string>
+    <string name="pref_enable_dsbforward">Forward Indicator</string>
+    <string name="pref_enable_hideseen">Hide Last Seen</string>
+    <string name="pref_enable_blueonreply">Blue Tick on Reply</string>
+    <string name="pref_enable_statusindicator">Status Viewed</string>
+    <string name="pref_sum_statusindicator">Don\'t Tell contact that you viewed their status</string>
+    <string name="sum_blueonreply">Show blue tick to contact only after you reply.</string>
+    <string name="sum_antirevoke">Prevent messages from getting deleted even if the sender deletes it</string>
+    <string name="pref_hide_compose">Hide typing...</string>
+    <string name="sum_hide_compose">"Don't tell the sender that you are typing a message"</string>
+    <string name="pref_hide_play">Hide blue microphone</string>
+    <string name="sum_hideplay_broadcast">"Don't tell the broadcast sender that you have played the audio message"</string>
+    <string name="sum_hideplay_contact">"Don't tell the sender that you played the audio message"</string>
+    <string name="sum_hideplay_group">"Don't tell the group that you have played the audio message"</string>
+    <string name="pref_hideread">Hide blue ticks</string>
+    <string name="sum_hideread_broadcast">"Don't tell the broadcast sender that you have read the message"</string>
+    <string name="sum_hideread_contact">"Don't tell the sender that you have read the message"</string>
+    <string name="sum_hideread_group">"Don't tell the group that you have read the messages"</string>
+    <string name="pref_hidereceipt">Hide second tick</string>
+    <string name="sum_hidereceipt_broadcast">"Don't tell the broadcast sender that you have the message (I don't recommend it, you receive new messages probably later)"</string>
+    <string name="sum_hidereceipt_contact">"Don't tell the sender that you have received the message (I don't recommend it, you receive new messages probably later)"</string>
+    <string name="sum_hidereceipt_group">"Don't tell the group that you have received the message (I don't recommend it, you receive new messages probably later)"</string>
+    <string name="pref_hiderecord">Hide recording...</string>
+    <string name="sum_hiderecord">"Don't tell the sender that you are recording a voice message"</string>
+    <string name="sum_hideseen">"Pause your last seen.(Note: You will not be able to see your contact's last seen as well)."</string>
+    <string name="pref_date_color">List Item Date</string>
+    <string name="pref_home_background">Home Background Color</string>
+    <string name="pref_drawer_background">Drawer Background Color</string>
+    <string name="pref_drawer_title">Drawer Title Color</string>
+    <string name="pref_drawer_label">Drawer Label Color</string>
+    <string name="pref_fabicon_color">Floating Action Icon Color</string>
+    <string name="pref_fab_color">Floating Action Background Color</string>
+    <string name="pref_navigationbar_view">Tint Navigation Bar</string>
+    <string name="pref_tranlucent_view">Darken Status Bar</string>
+    <string name="pref_navicon_color">Bottom Navigation Color</string>
+    <string name="pref_disable_internet">Internet Connection (DND Mode)</string>
+    <string name="sum_enable">Enable</string>
+    <string name="menu_dnd">DND Mode</string>
+    <string name="sum_disable">Disable</string>
+    <string name="alert_title">Warning!!!</string>
+    <string name="alert_dnd_mode">DND Mode - if enabled, you will not receive or send any messages until you disable it.</string>
+    <string name="pref_dnd_menu">DND Menu View</string>
+    <string name="pref_chat_settings">Chat Settings</string>
+    <string name="sum_chat_settings">Chat ui configurations</string>
+    <string name="pref_chat_title">Title Text Color</string>
+    <string name="pref_chat_subtitle">Subtitle Text Color</string>
+    <string name="pref_chat_icon">Icon Color</string>
+    <string name="title_pref_theme">Application Theme</string>
+    <string name="title_pref_customtheme">Custom Theme Color</string>
+    <string name="pref_card_color">Card Color</string>
+    <string name="pref_enable_card">Card Background</string>
+    <string name="pref_transparent_card">Semi Transparent Card</string>
+    <string name="pref_backup_data">Backup</string>
+    <string name="sum_backup_data">Create a Backup of DELTA-WA Data</string>
+    <string name="pref_restore_data">Restore</string>
+    <string name="sum_restore_data">Restore DELTA-WA Data</string>
+    <string name="pref_reset_data">Reset</string>
+    <string name="sum_reset_data" >Action will reset all configuration</string>
+    <string name="permission_setting">Permission</string>
+    <string name="pref_restore_theme">Restore Theme</string>
+    <string name="sum_restore_theme">Restore theme from sd card</string>
+    <string name="sum_backup_theme">Create backup theme to sd card</string>
+    <string name="pref_backup_theme">Backup Theme</string>
+    <string name="title_default_home">Default Home</string>
+    <string name="title_chat_input_enable">Tint Entry Background by Theme</string>
+    <string name="pref_chat_input_background">Entry Background Color</string>
+
+    <string name="pref_rounded_ratio">Avatar Rounded Ratio</string>
+    <string name="pref_disable_divider">Hide Divider</string>
+    <string name="pref_media_settings">Tools</string>
+    <string name="sum_media_settings">Backup and restore configurations</string>
+    <string name="pref_image_resolution">Send image in full resolution</string>
+    <string name="sum_fiveminutes_status">Allows you to put 5 minute video instead of 30 seconds as a status. Stock Whatsapp will see 30sec only</string>
+    <string name="pref_fiveminutes_status">Five minute status</string>
+    <string name="delta_report">Report Problem</string>
+    <string name="delta_version">DELTA-WA v0.0.1 - alpha edition</string>
+    <string name="pref_custom_report">Custom Report Problem</string>
+    <string name="menu_fancytext">Fancy Style</string>
+    <string name="pref_custom_icons">Use Custom Icons for Tabs</string>
+</resources>

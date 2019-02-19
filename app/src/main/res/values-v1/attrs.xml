@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="label" format="string" />
+    <attr name="toolbar_popup_theme" format="reference" />
+
+    <dimen name="tinggi_aw">200.0dp</dimen>
+    <dimen name="lebar_aw">20.0dp</dimen>
+    <string name="color_swatch_description">Color %1$d</string>
+    <string name="color_swatch_description_selected">Color %1$d selected</string>
+    <string name="color_picker_default_title">Select a Color</string>
+    <dimen name="color_swatch_large">64dp</dimen>
+    <dimen name="color_swatch_small">52dp</dimen>
+    <dimen name="color_swatch_margins_large">8dp</dimen>
+    <dimen name="color_swatch_margins_small">6dp</dimen>
+
+
+    <declare-styleable name="IconListPreference">
+        <attr name="prefIcon" format="reference" />
+        <attr name="updateIcon" format="boolean" />
+        <attr name="iconSide" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="start" value="2" />
+            <enum name="end" value="3" />
+        </attr>
+        <attr name="entryIcons" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="FunkyHeader">
+        <attr name="src" />
+        <attr name="scaleType" />
+        <attr name="tint" />
+    </declare-styleable>
+    <attr name="src" format="reference" />
+    <attr name="scaleType">
+        <enum name="centerCrop" value="0" />
+        <enum name="fitXY" value="1" />
+    </attr>
+    <attr name="tint" format="color" />
+
+    <declare-styleable name="MarqueeToolbar">
+        <attr name="startDelay" format="integer" />
+        <attr name="titleMarqueeEnabled" format="boolean" />
+        <attr name="subtitleMarqueeEnabled" format="boolean" />
+        <attr name="titleRepeat" format="integer" />
+        <attr name="subtitleRepeat" format="integer" />
+        <attr name="titleText" format="string" />
+        <attr name="subtitleText" format="string" />
+    </declare-styleable>
+</resources>

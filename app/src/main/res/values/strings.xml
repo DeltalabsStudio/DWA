@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">DWA</string>
+    <string name="whatsapp_web">WhatsApp Web</string>
+    <string name="starred_messages">Starred messages</string>
+    <string name="archived_chats">Archived chats</string>
+    <string name="settings_chat">Chats</string>
+    <string name="settings_account_info">Account</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_data_and_storage_usage">Data and storage usage</string>
+    <string name="settings_help">Help</string>
+    <string name="menuitem_groupchat">New group</string>
+    <string name="menuitem_list">New broadcast</string>
+    <string name="cancel">Cancel</string>
+    <string name="wallpaper_preview_set">Set Wallpaper</string>
+
+    <string-array name="pesan">
+        <item>@string/sum_backup_data</item>
+        <item>@string/sum_blueonreply</item>
+        <item>@string/sum_chat_settings</item>
+        <item>@string/sum_fiveminutes_status</item>
+        <item>@string/sum_hideplay_broadcast</item>
+        <item>@string/sum_hidereceipt_broadcast</item>
+        <item>@string/sum_restore_theme</item>
+        <item>@string/sum_home_wallpaper</item>
+        <item>@string/sum_blueonreply</item>
+        <item>@string/sum_chat_settings</item>
+        <item>@string/sum_fiveminutes_status</item>
+        <item>@string/sum_hideplay_broadcast</item>
+        <item>@string/sum_hidereceipt_broadcast</item>
+        <item>@string/sum_restore_theme</item>
+        <item>@string/sum_home_wallpaper</item>
+    </string-array>
+
+
+</resources>

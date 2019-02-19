@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <id.delta.whatsapp.ui.views.AutoImageView android:visibility="gone" android:layout_gravity="center|left" android:id="@+id/search_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_back_white" style="?actionButtonStyle" />
+    <FrameLayout android:layout_marginBottom="16dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_gravity="center" android:background="@drawable/delta_search_bg" android:layout_width="fill_parent" android:layout_height="40.0dp" >
+        <android.support.v7.widget.SearchView android:layout_gravity="center" android:id="@+id/delta_search_view" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/Widget.AppCompat.SearchView.ActionBar" />
+    </FrameLayout>
+    <id.delta.whatsapp.ui.accent.AccentImageView android:layout_gravity="center|right" android:id="@+id/search_filter" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?actionButtonStyle" />
+</merge>

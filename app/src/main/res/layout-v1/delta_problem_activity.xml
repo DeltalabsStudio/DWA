@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:background="@color/delta_primarycolor"
+        android:elevation="3dp"
+        android:layout_height="?attr/actionBarSize"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="40.0dp"
+                    android:textColor="?android:textColorPrimary"
+                    android:id="@+id/mErrorView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:textColor="@color/delta_white"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="Reset"
+                android:id="@+id/mReset"
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:textColor="@color/delta_white"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="Report"
+                android:id="@+id/mReport"
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:textColor="@color/delta_white"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="Chat"
+                android:id="@+id/mChat"
+                android:layout_weight="1"
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

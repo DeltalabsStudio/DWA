@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/about"
+        android:title="About" />
+
+    <item
+        android:id="@+id/restore"
+        android:title="Clear Settings" />
+
+    <item
+        android:id="@+id/restart"
+        android:title="Restart"
+        android:icon="@drawable/delta_ic_restart"
+        app:showAsAction="always"/>
+
+</menu>

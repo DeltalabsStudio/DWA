@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Main"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:icon="@drawable/delta_ic_themes"
+        android:key="key_primarycolor_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/primary_color"
+        android:summary="%s"
+        android:defaultValue="0xff075e54"/>
+
+    <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
+        android:icon="@drawable/delta_ic_accent"
+        android:key="key_accentcolor_picker"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/accent_color"
+        android:summary="%s"
+        android:defaultValue="0xFF558b2f"/>
+
+    <ListPreference
+        android:icon="@drawable/delta_ic_primary"
+        android:entries="@array/theme_entry"
+        android:title="@string/title_pref_theme"
+        android:key="key_application_theme"
+        android:layout="@layout/delta_preference_layout"
+        android:summary="%s"
+        android:defaultValue="0"
+        android:entryValues="@array/theme_value" />
+
+    <id.delta.whatsapp.views.colorpicker.ColorPickerPreference
+        android:title="@string/title_pref_customtheme"
+        android:icon="@drawable/delta_ic_custom"
+        android:layout="@layout/delta_preference_layout"
+        android:key="key_custom_theme"
+        android:summary="%s"
+        android:defaultValue="0xFF141d26" />
+
+    <Preference
+        android:layout="@layout/delta_preference_layout"
+        android:icon="@drawable/delta_ic_home"
+        android:key="key_pref_home"
+        android:title="@string/pref_home_settings"
+        android:summary="@string/sum_home_settings"/>
+
+    <Preference
+        android:layout="@layout/delta_preference_layout"
+        android:icon="@drawable/delta_ic_chats"
+        android:key="key_pref_chat"
+        android:title="@string/pref_chat_settings"
+        android:summary="@string/sum_chat_settings"/>
+
+    <Preference
+        android:layout="@layout/delta_preference_layout"
+        android:icon="@drawable/delta_ic_media"
+        android:key="key_pref_media"
+        android:title="@string/pref_media_settings"
+        android:summary="@string/sum_media_settings"/>
+
+    <PreferenceCategory
+        android:layout="@layout/delta_preference_category"
+        android:title="Other"/>
+
+    <id.delta.whatsapp.views.preference.SeekBarPreference
+        android:enabled="false"
+        android:icon="@drawable/delta_ic_contact"
+        android:layout="@layout/delta_preference_layout"
+        android:defaultValue="100"
+        android:max="100"
+        android:summary="%s"
+        android:key="key_rounded_ratio"
+        android:title="@string/pref_rounded_ratio"/>
+
+
+    <CheckBoxPreference
+        android:icon="@drawable/delta_ic_online"
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_dnd_menu"
+        android:key="key_dnd_menu"
+        android:summaryOff="Hiden"
+        android:summaryOn="Show"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:icon="@drawable/delta_ic_offline"
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_disable_internet"
+        android:key="key_disable_internet"
+        android:summaryOff="Enable"
+        android:summaryOn="Disable"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:icon="@drawable/delta_ic_navibar"
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_navigationbar_view"
+        android:key="key_navigation_bar"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:icon="@drawable/delta_ic_statusbar"
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_tranlucent_view"
+        android:key="key_translucent_bar"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="true" />
+
+    <CheckBoxPreference
+        android:icon="@drawable/delta_ic_restheme"
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_custom_report"
+        android:key="key_custom_report"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="true" />
+
+    <id.delta.whatsapp.views.preference.ActionPreference
+        android:key="key_reset_data"
+        android:icon="@drawable/delta_ic_clear"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/pref_reset_data"
+        android:summary="@string/sum_reset_data"/>
+
+    <Preference
+        android:icon="@drawable/delta_ic_logo"
+        android:layout="@layout/delta_preference_layout"
+        android:title="@string/menu_about"
+        android:summary="@string/delta_version"/>
+
+
+</PreferenceScreen>

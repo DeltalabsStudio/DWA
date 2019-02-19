@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.whatsapp.ThumbnailButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mAvatar"
+    android:layout_gravity="center"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:src="@drawable/delta_ic_profile"
+    android:layout_width="36.0dp"
+    android:layout_height="36.0dp" />

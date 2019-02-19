@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerVertical="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <id.delta.whatsapp.ui.accent.AccentImageView android:id="@+id/icon" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/delta_ic_allo" android:layout_centerVertical="true" android:layout_marginStart="16.0dip" />
+    <TextView android:textSize="15sp" android:textColor="?android:textColorSecondary" android:id="@+id/label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Navigation Item" android:layout_centerVertical="true" android:layout_marginStart="72.0dip" />
+</RelativeLayout>
