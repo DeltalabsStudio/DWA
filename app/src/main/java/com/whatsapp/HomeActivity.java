@@ -96,7 +96,7 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
 
             @Override
             public void onPageSelected(int i) {
-                HomeActivity.this.showToast(String.valueOf(i));
+               // HomeActivity.this.showToast(String.valueOf(i));
                 new OnPageSelected(HomeActivity.this, i).onPageListener();
             }
 
@@ -165,22 +165,6 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
                 .setBlurAlgorithm(new SupportRenderScriptBlur(this))
                 .setBlurRadius(radius)
                 .setHasFixedTransformationMatrix(true);
-    }
-
-    private void setActionBarTitleAsMarquee(){
-        // Get Action Bar's title
-        View v = getWindow().getDecorView();
-        int resId = getResources().getIdentifier("action_bar_subtitle", "id", "android");
-        TextView title = (TextView) v.findViewById(resId);
-
-        // Set the ellipsize mode to MARQUEE and make it scroll only once
-        title.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        title.setMarqueeRepeatLimit(-1);
-
-        // In order to start strolling, it has to be focusable and focused
-        title.setFocusable(true);
-        title.setFocusableInTouchMode(true);
-        title.requestFocus();
     }
 
     private void initBackground(){
@@ -356,20 +340,10 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
 
     @Override
     public void onUpOrCancelMotionEvent(ScrollState scrollState) {
-      //  Tools.showToast(""+scrollState);
         View mStatusContainer = findViewById(Tools.intId("mBlur"));
-
         if(scrollState.equals(ScrollState.DOWN)){
-          /*  TranslateAnimation animate = new TranslateAnimation(0,0,-mStatusContainer.getHeight(),0);
-            animate.setDuration(100);
-            animate.setFillAfter(true);
-            mStatusContainer.startAnimation(animate);*/
             mStatusContainer.setVisibility(View.VISIBLE);
         }else {
-           /* TranslateAnimation animate = new TranslateAnimation(0,0,0,-mStatusContainer.getHeight());
-            animate.setDuration(500);
-            animate.setFillAfter(true);
-            mStatusContainer.startAnimation(animate);*/
             mStatusContainer.setVisibility(View.GONE);
         }
     }
