@@ -28,7 +28,7 @@ public class Dnd {
             if(Prefs.getBoolean(Keys.KEY_DND_MENU, false)){
                 menu.add(0, DNDMENU, Menu.NONE, Tools.intString("menu_dnd")).setIcon(Dnd.dndIcon()).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
             }
-            menu.add(0, DELTAMENU, Menu.NONE, Tools.intString("delta_settings")).setIcon(0);
+            menu.add(0, DELTAMENU, Menu.NONE, Tools.intString("delta_settings")).setIcon(Tools.colorDrawable("delta_ic_settings",  Colors.warnaAutoTitle(), SRC_IN)).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 
         }catch (Exception e){
             e.printStackTrace();

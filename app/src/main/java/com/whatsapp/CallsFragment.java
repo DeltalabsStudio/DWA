@@ -69,6 +69,10 @@ public class CallsFragment extends ListFragment {
 
             }
         });
+
+        if(getActivity() instanceof HomeActivity){
+            ((HomeActivity) getActivity()).initScroll(this, view);
+        }
         return view;
     }
 

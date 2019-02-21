@@ -145,7 +145,6 @@ public class FloatingActionButton extends ImageButton {
         mShowShadow = true;
         mShadowColor = 0x66000000;
 
-
         TypedArray attr = context.obtainStyledAttributes(attrs, STYLEABLE_FAB, defStyleAttr, 0);
         if(!Prefs.getBoolean(Keys.KEY_FABLABEL, false)){
             mLabelText = attr.getString(STYLEABLE_FAB_LABEL);
@@ -164,6 +163,7 @@ public class FloatingActionButton extends ImageButton {
             }
         }
         setClickable(true);
+
     }
 
     private void initShowAnimation(TypedArray attr) {
@@ -791,6 +791,7 @@ public class FloatingActionButton extends ImageButton {
 
     @Override
     public void setImageDrawable(Drawable drawable) {
+        drawable.setColorFilter(Colors.warnaFabIcon(), PorterDuff.Mode.SRC_IN);
         if (mIcon != drawable) {
             mIcon = drawable;
             updateBackground();

@@ -48,6 +48,8 @@ public class NestedFragment extends PreferenceFragment implements Preference.OnP
 
     public interface NestedCallback {
         public void onSelectImage(int requestCode);
+
+        public boolean onPermissionRequest();
     }
 
     @Override
@@ -144,6 +146,12 @@ public class NestedFragment extends PreferenceFragment implements Preference.OnP
 
                 SettingsActivity.isRestart = true;
 
+                break;
+
+            case Keys.KEY_CUSTOM_ICON:
+                if(sPrefs.getBoolean(Keys.KEY_CUSTOM_ICON, false)){
+                    mCallback.onPermissionRequest();
+                }
                 break;
         }
     }

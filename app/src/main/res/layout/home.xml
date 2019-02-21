@@ -36,7 +36,7 @@
                         android:id="@+id/mAppBar"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="?actionBarSize">
 
                         <include layout="@layout/delta_profile_view"/>
 
@@ -52,11 +52,18 @@
 
                     </LinearLayout>
 
+                    <com.eightbitlab.blurview.BlurView
+                        android:id="@+id/mBlur"
+                        whatsapp:blurOverlayColor="@color/colorOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
                     <LinearLayout
                         android:id="@+id/mStatusContainer"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
 
                         <FrameLayout
                             android:id="@+id/home_fragment"
@@ -66,6 +73,8 @@
                         <include layout="@layout/delta_search_view"/>
 
                     </LinearLayout>
+
+                    </com.eightbitlab.blurview.BlurView>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"
@@ -91,7 +100,6 @@
                         android:layout_height="fill_parent" />
 
                 </FrameLayout>
-
 
 
             </LinearLayout>
@@ -189,6 +197,8 @@
                     android:layout_height="0.0dp"/>
 
         </LinearLayout>
+
+
 
     </FrameLayout>
 

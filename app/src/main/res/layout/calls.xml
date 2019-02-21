@@ -44,14 +44,13 @@
     </LinearLayout>
 
 
-    <ListView
+    <com.whatsapp.observablelistview.ObservableListView
         android:visibility="visible"
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
     <id.delta.whatsapp.ui.views.FunkyHeader
-        android:visibility="gone"
         android:id="@+id/wave_head"
         android:layout_width="match_parent"
         android:layout_height="350dp"

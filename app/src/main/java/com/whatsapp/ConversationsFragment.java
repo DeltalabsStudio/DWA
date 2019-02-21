@@ -1,5 +1,6 @@
 package com.whatsapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.whatsapp.observablelistview.ObservableListView;
+import com.whatsapp.observablelistview.ObservableScrollViewCallbacks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,12 +40,16 @@ public class ConversationsFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.conversations, container, false);
-        ListScrolView mList = view.findViewById(android.R.id.list);
+        ObservableListView mList = view.findViewById(android.R.id.list);
         dataChat();
         chatsAdapter = new ChatsAdapter(getContext(), chatList);
         mList.setAdapter(chatsAdapter);
         mList.setDivider(Row.listDivider());
-        mList.setOnDetectScrollListener(new OnDetectScrollView(getActivity()));
+
+        if(getActivity() instanceof HomeActivity){
+            ((HomeActivity) getActivity()).initScroll(this, view);
+        }
+
         return view;
     }
 

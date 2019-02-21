@@ -47,12 +47,13 @@ public class SettingsActivity extends BaseActivity implements SettingsFragment.C
     private static final int MENU_RESTART = Menu.FIRST + 2;
 
     //Permission
-    boolean hasPermission = false;
+    public boolean hasPermission = false;
     private Object[] WRITE_STORAGE;
     public static int REQ_PICK_HOME = 100;
     public static int REQ_SEND_HOME = 101;
     public static int REQ_PICK_COVER = 200;
     public static int REQ_SEND_COVER = 201;
+    public static int REQ_CUSTOM_ICON = 300;
     private int REQUEST_CODE;
 
     @Override
@@ -101,6 +102,16 @@ public class SettingsActivity extends BaseActivity implements SettingsFragment.C
         }
         requestPermission();
 
+    }
+
+    @Override
+    public boolean onPermissionRequest() {
+        REQUEST_CODE = REQ_CUSTOM_ICON;
+        if (Build.VERSION.SDK_INT < 23) {
+            hasPermission = true;
+        }
+        requestPermission();
+        return false;
     }
 
     private void pickImage(int requestCode){
@@ -181,7 +192,7 @@ public class SettingsActivity extends BaseActivity implements SettingsFragment.C
         startActivityForResult(intent2, requestCode);
     }
 
-    private void requestPermission() {
+    public void requestPermission() {
         if (Build.VERSION.SDK_INT >= 23) {
             try {
                 if (Integer.parseInt(Activity.class.getMethod("checkSelfPermission", new Class[]{String.class}).invoke(this, new Object[]{"android.permission.WRITE_EXTERNAL_STORAGE"}).toString()) == 0) {
@@ -199,7 +210,9 @@ public class SettingsActivity extends BaseActivity implements SettingsFragment.C
                 } catch (Exception e2) {
                 }
             }else {
-                pickImage(REQUEST_CODE);
+                if(REQUEST_CODE!=REQ_CUSTOM_ICON){
+                    pickImage(REQUEST_CODE);
+                }
             }
         }
     }

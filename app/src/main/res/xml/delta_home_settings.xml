@@ -10,7 +10,7 @@
         android:widgetLayout="@layout/delta_preference_widget_switch"
         android:title="@string/pref_custom_icons"
         android:key="key_custom_icons"
-        android:summary="Replace icon in WhatsApp/DELTABackup/icons/ with your icons 48px"
+        android:summary="Silahkan ganti ikon di WhatsApp/DELTA/icons/ ukuran sesuai dengan dpi handphonemu (36px, 48px, atau 72px)"
         android:defaultValue="false" />
 
     <CheckBoxPreference

@@ -12,6 +12,29 @@
         android:layout_height="56.0dp">
 
         <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/mMenu"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/iMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tMenu"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
             android:visibility="invisible"
             android:id="@+id/mOne"
             android:gravity="center"
@@ -26,12 +49,14 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/tOne"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:text="Chats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+
 
         <LinearLayout
             android:visibility="visible"
@@ -48,6 +73,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/tTwo"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:text="Statuses"
@@ -70,9 +96,33 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/tThree"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:text="Calls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/mAdd"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/iAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tAdd"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="Add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -82,9 +132,24 @@
     <LinearLayout
         android:layout_gravity="bottom"
         android:orientation="horizontal"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/fMenu"
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content">
+
+            <id.delta.whatsapp.ui.views.FloatingActionButton
+                android:layout_gravity="center"
+                android:id="@+id/mFabMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
 
         <FrameLayout
             android:id="@+id/fOne"
@@ -94,6 +159,7 @@
             android:layout_height="wrap_content">
 
             <id.delta.whatsapp.ui.views.FloatingActionButton
+                android:padding="16dp"
                 android:layout_gravity="center"
                 android:id="@+id/mFabOne"
                 android:layout_width="wrap_content"
@@ -127,6 +193,21 @@
             <id.delta.whatsapp.ui.views.FloatingActionButton
                 android:layout_gravity="center"
                 android:id="@+id/mFabThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fAdd"
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content">
+
+            <id.delta.whatsapp.ui.views.FloatingActionButton
+                android:layout_gravity="center"
+                android:id="@+id/mFabAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

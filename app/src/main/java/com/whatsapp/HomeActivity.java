@@ -1,9 +1,11 @@
 package com.whatsapp;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -13,16 +15,24 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.eightbitlab.blurview.BlurView;
+import com.eightbitlab.blurview.SupportRenderScriptBlur;
 import com.navdrawer.SimpleSideDrawer;
 import com.squareup.picasso.Picasso;
 import com.whatsapp.contact.a.d;
 import com.whatsapp.contact.b;
+import com.whatsapp.observablelistview.ObservableListView;
+import com.whatsapp.observablelistview.ObservableScrollViewCallbacks;
+import com.whatsapp.observablelistview.ScrollState;
 import com.whatsapp.wallpaper.WallPaperView;
 
 import java.io.File;
@@ -46,13 +56,14 @@ import id.delta.whatsapp.value.Dnd;
 import id.delta.whatsapp.value.Themes;
 import id.delta.whatsapp.value.Wallpaper;
 
+import static android.graphics.PorterDuff.Mode.SRC_IN;
 import static id.delta.whatsapp.value.Main.drawerLabel;
 import static id.delta.whatsapp.value.Main.homeTitle;
 import static id.delta.whatsapp.value.Main.searchIcon;
 import static id.delta.whatsapp.value.Main.subtitleColor;
 import static id.delta.whatsapp.value.Main.titleColor;
 
-public class HomeActivity extends DialogToastActivity implements DialogAdd.AddListener{
+public class HomeActivity extends DialogToastActivity implements DialogAdd.AddListener, ObservableScrollViewCallbacks {
 
     public Bitmap pictureBitmap;
     public FragmentStatus mStatusFragment;
@@ -85,6 +96,7 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
 
             @Override
             public void onPageSelected(int i) {
+                HomeActivity.this.showToast(String.valueOf(i));
                 new OnPageSelected(HomeActivity.this, i).onPageListener();
             }
 
@@ -109,7 +121,7 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         //antiMaling
         z();
         TextView m = findViewById(getResources().getIdentifier("mInfo", "id", getPackageName()));
-        m.setVisibility(View.VISIBLE);
+        m.setVisibility(View.GONE);
         m.setText(c(Me));
         m.setTextColor(drawerLabel());
 
@@ -136,6 +148,23 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
       //  mCurvedNavigation.onStartSelected();
       //  new PageListener(this, mPager).onSelectPage();
 
+        blurView();
+
+    }
+
+    private void blurView(){
+        FrameLayout mFrame = findViewById(Tools.intId("root_view"));
+        BlurView mBlur = findViewById(Tools.intId("mBlur"));
+      //  FrameLayout mFrame = findViewById(getResources().getIdentifier("root_view", "id", getPackageName()));
+      //  BlurView mBlur = findViewById(getResources().getIdentifier("mBlur", "id", getPackageName()));
+
+        final float radius = 10f;
+        final Drawable windowBackground = getWindow().getDecorView().getBackground();
+        mBlur.setupWith(mFrame)
+                .setFrameClearDrawable(windowBackground)
+                .setBlurAlgorithm(new SupportRenderScriptBlur(this))
+                .setBlurRadius(radius)
+                .setHasFixedTransformationMatrix(true);
     }
 
     private void setActionBarTitleAsMarquee(){
@@ -256,8 +285,8 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         menu.clear();
-        Dnd.addMenu(menu);
         menu.add(0, 0, Menu.NONE, Tools.intString("menu_restart")).setIcon(searchIcon()).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        Dnd.addMenu(menu);
         menu.add(0, 1, Menu.NONE, Tools.intString("menu_about")).setIcon(0);
         return super.onPrepareOptionsMenu(menu);
     }
@@ -314,5 +343,46 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
 
     private boolean processOnBackPressed() {
         return false;
+    }
+
+    @Override
+    public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+    }
+
+    @Override
+    public void onDownMotionEvent() {
+
+    }
+
+    @Override
+    public void onUpOrCancelMotionEvent(ScrollState scrollState) {
+      //  Tools.showToast(""+scrollState);
+        View mStatusContainer = findViewById(Tools.intId("mBlur"));
+
+        if(scrollState.equals(ScrollState.DOWN)){
+          /*  TranslateAnimation animate = new TranslateAnimation(0,0,-mStatusContainer.getHeight(),0);
+            animate.setDuration(100);
+            animate.setFillAfter(true);
+            mStatusContainer.startAnimation(animate);*/
+            mStatusContainer.setVisibility(View.VISIBLE);
+        }else {
+           /* TranslateAnimation animate = new TranslateAnimation(0,0,0,-mStatusContainer.getHeight());
+            animate.setDuration(500);
+            animate.setFillAfter(true);
+            mStatusContainer.startAnimation(animate);*/
+            mStatusContainer.setVisibility(View.GONE);
+        }
+    }
+
+    public void initScroll(Fragment fragment, View view){
+        Activity activity = fragment.getActivity();
+        ObservableListView mList = view.findViewById(android.R.id.list);
+        if (activity instanceof ObservableScrollViewCallbacks) {
+            mList.setScrollViewCallbacks((ObservableScrollViewCallbacks) activity);
+        }
+    }
+
+    public void showToast(String toast){
+        Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
     }
 }

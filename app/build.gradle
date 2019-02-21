@@ -3,6 +3,11 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
+
+        //Blur//
+        renderscriptTargetApi 28
+        renderscriptSupportModeEnabled true
+
         applicationId "id.delta.whatsapp"
         minSdkVersion 17
         targetSdkVersion 28
