@@ -1,4 +1,4 @@
-package id.delta.whatsapp.split;
+package id.delta.whatsapp.split.service;
 
 public interface SplitterDelegate {
     void completed();

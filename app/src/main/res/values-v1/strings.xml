@@ -120,4 +120,10 @@
     <string name="pref_custom_report">Custom Report Problem</string>
     <string name="menu_fancytext">Fancy Style</string>
     <string name="pref_custom_icons">Custom Icons for Tabs</string>
+    <string name="split_hint">Enter Duration to Split the selected into Parts</string>
+    <string name="edit_info">In Seconds</string>
+    <string name="trim_video">Trim Video</string>
+    <string name="title_split_activity">Split Video</string>
+    <string name="title_trim_activity">Trim Video</string>
+    <string name="title_video_activity">Select Video</string>
 </resources>

@@ -4,11 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import id.delta.whatsapp.activities.MainActivity;
-import id.delta.whatsapp.split.MainSpitActivity;
-import id.delta.whatsapp.updater.Updater;
 import id.delta.whatsapp.utils.Actions;
-import id.delta.whatsapp.utils.Prefs;
 
 
 /**

@@ -1,6 +1,10 @@
-package id.delta.whatsapp.split;
+package id.delta.whatsapp.split.service;
 
 import android.net.Uri;
+
+import id.delta.whatsapp.split.presenter.NotificationCenter;
+import id.delta.whatsapp.split.presenter.NotificationName;
+
 
 public class DataStorage {
     private static final DataStorage ourInstance = new DataStorage();
@@ -37,6 +41,6 @@ public class DataStorage {
 
     public void setVideoPath(Uri uri) {
         this.videoPath = uri;
-        NSNotificationCenter.getInstance().post(NSNotificationName.VIDEO_PATH_CHANGED, uri);
+        NotificationCenter.getInstance().post(NotificationName.VIDEO_PATH_CHANGED, uri);
     }
 }

@@ -1,4 +1,4 @@
-package id.delta.whatsapp.split;
+package id.delta.whatsapp.split.service;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -14,12 +14,13 @@ import android.os.Build;
 import android.os.Build.VERSION;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore.Video.Media;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 
-import id.delta.whatsapp.BuildConfig;
+
 
 public class Splitter {
     private Context context;
@@ -79,7 +80,7 @@ public class Splitter {
             }
         }
         int splitDuration = DataStorage.getInstance().getSplitDuration();
-        String str2 = BuildConfig.FLAVOR;
+        String str2 = "";
         String selectedVideoPath = z ? DataStorage.getInstance().getSelectedVideoPath() : generatePath(DataStorage.getInstance().getVideoPath());
         MediaExtractor mediaExtractor = new MediaExtractor();
         try {

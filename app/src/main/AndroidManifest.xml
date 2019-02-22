@@ -24,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.whatsapp.camera.CameraActivity" />
+        <activity android:name="com.whatsapp.TextStatusComposerActivity" />
+        <activity android:name="com.whatsapp.ArchivedConversationsActivity" />
 
         <activity android:theme="@style/Theme.App.Home" android:name=".activities.MainActivity" />
         <activity android:name="com.whatsapp.Conversation" android:windowSoftInputMode="stateAlwaysHidden"/>
@@ -34,13 +37,10 @@
         <activity android:theme="@style/Theme.App.Home" android:name=".activities.DialerActivity" />
         <activity android:theme="@style/Theme.App.Home" android:name="com.whatsapp.wallpaper.CoverWallpaperPreview" />
         <activity android:theme="@style/Theme.App.Home" android:label="@string/delta_privacy" android:name=".activities.PrivacyActivity" />
-        <activity android:name="com.whatsapp.TextStatusComposerActivity" />
-        <activity android:name="com.whatsapp.ArchivedConversationsActivity" />
         <activity android:label="@string/delta_report" android:name=".activities.ProblemActivity" />
-        <activity android:name=".split.MainSpitActivity" />
-        <activity android:name=".split.SplittingActivity" />
-        <activity android:name=".activities.VideoActivity"/>
-        <activity android:name="com.whatsapp.camera.CameraActivity" />
+        <activity android:label="@string/title_video_activity" android:name=".activities.VideoActivity"/>
+        <activity android:label="@string/title_split_activity" android:name=".activities.SplitActivity" />
+        <activity android:label="@string/title_trim_activity" android:name=".activities.PartActivity" />
     </application>
 
 </manifest>

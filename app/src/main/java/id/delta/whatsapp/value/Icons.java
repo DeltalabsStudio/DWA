@@ -26,7 +26,7 @@ public class Icons {
 
     public static String deltaPath = "WhatsApp/DELTA/";
 
-    private static int [] mImageIcon = {Tools.intDrawable("ic_action_compose"), Tools.intDrawable("ic_camera_status_compose"), Tools.intDrawable("ic_action_call"), Tools.intDrawable("delta_ic_menus"), Tools.intDrawable("delta_ic_adds")};
+    private static int [] mImageIcon = {Tools.intDrawable("delta_ic_msg"), Tools.intDrawable("ic_camera_status_compose"), Tools.intDrawable("ic_action_call"), Tools.intDrawable("delta_ic_menus"), Tools.intDrawable("delta_ic_adds")};
 
     private static String [] mIconName = {"ic_chats","ic_cameras","ic_calls", "ic_menu", "ic_add"};
 

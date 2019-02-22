@@ -17,7 +17,7 @@ public class CurvedBottom extends LinearLayout {
     private Paint mPaint;
 
     /** the CURVE_CIRCLE_RADIUS represent the radius of the fab button */
-    public final int CURVE_CIRCLE_RADIUS = Tools.dpToPx(getContext(), 36);
+    public final int CURVE_CIRCLE_RADIUS = Tools.dpToPx(getContext(), 27);
     // the coordinates of the first curve
     public Point mFirstCurveStartPoint = new Point();
     public Point mFirstCurveEndPoint = new Point();
@@ -35,6 +35,16 @@ public class CurvedBottom extends LinearLayout {
 
     public static int START = 6;
     public static int CENTER = 2;
+
+    public int getDefaultPosition() {
+        return mDefaultPosition;
+    }
+
+    public void setDefaultPosition(int mDefaultPosition) {
+        this.mDefaultPosition = mDefaultPosition;
+    }
+
+    public int mDefaultPosition = START;
 
     public CurvedBottom(Context context) {
         super(context);
@@ -78,7 +88,7 @@ public class CurvedBottom extends LinearLayout {
        // mNavigationBarHeight = getHeight();
         mNavigationBarHeight = Tools.dpToPx(getContext(), 56);
         // the coordinates (x,y) of the start point before curve
-        setPosistion(START); // 6 == Start || 2 == Center
+        setPosistion(getDefaultPosition()); // 6 == Start || 2 == Center
     }
 
     @Override

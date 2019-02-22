@@ -153,14 +153,4 @@
         android:background="?android:listDivider"
         android:layout_alignParentEnd="true"/>
 
-    <TextView
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:textAllCaps="true"
-        android:textSize="16sp"
-        android:id="@+id/mInfo"
-        android:text="@string/deltalabs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
 </id.delta.whatsapp.home.stock.NavigationDrawer>

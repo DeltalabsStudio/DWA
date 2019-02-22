@@ -49,6 +49,7 @@ public class SettingsActivity extends BaseActivity implements SettingsFragment.C
     //Permission
     public boolean hasPermission = false;
     private Object[] WRITE_STORAGE;
+
     public static int REQ_PICK_HOME = 100;
     public static int REQ_SEND_HOME = 101;
     public static int REQ_PICK_COVER = 200;

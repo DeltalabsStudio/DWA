@@ -11,17 +11,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eightbitlab.blurview.BlurView;
@@ -56,8 +53,6 @@ import id.delta.whatsapp.value.Dnd;
 import id.delta.whatsapp.value.Themes;
 import id.delta.whatsapp.value.Wallpaper;
 
-import static android.graphics.PorterDuff.Mode.SRC_IN;
-import static id.delta.whatsapp.value.Main.drawerLabel;
 import static id.delta.whatsapp.value.Main.homeTitle;
 import static id.delta.whatsapp.value.Main.searchIcon;
 import static id.delta.whatsapp.value.Main.subtitleColor;
@@ -65,6 +60,7 @@ import static id.delta.whatsapp.value.Main.titleColor;
 
 public class HomeActivity extends DialogToastActivity implements DialogAdd.AddListener, ObservableScrollViewCallbacks {
 
+    public static final String ARG_INITIAL_POSITION = "ARG_INITIAL_POSITION";
     public Bitmap pictureBitmap;
     public FragmentStatus mStatusFragment;
     public NavigationDrawer mNavigationDrawer;
@@ -74,6 +70,9 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
     private SimpleSideDrawer mNav;
 
     public CurvedNavigationView mCurvedNavigation;
+    public View mStatusContainer;
+
+    int badge = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,78 +84,62 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         mPager.setAdapter(new HomeTabsAdapter(getSupportFragmentManager()));
         mPager.setCurrentItem(1);
         mPager.setOffscreenPageLimit(3);
-
         tabs = (HomePagerSlidingTabStrip) findViewById(R.id.tabs);
         tabs.setViewPager(mPager);
         tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int i, float v, int i1) {
-
-            }
+            public void onPageScrolled(int i, float v, int i1) {}
 
             @Override
             public void onPageSelected(int i) {
-               // HomeActivity.this.showToast(String.valueOf(i));
                 new OnPageSelected(HomeActivity.this, i).onPageListener();
             }
 
             @Override
-            public void onPageScrollStateChanged(int i) {
-
-            }
+            public void onPageScrollStateChanged(int i) {}
         });
 
+
+        //SimpleSideDrawer
+        mNav = new SimpleSideDrawer(this);
+        mNav.setRightBehindContentView(R.layout.delta_dialer_activity);
+
+        //Include
         initAvatar();
         initToolbar();
         initFragment();
         initSearch();
+        Wallpaper.setDatafolder();
+        initWall();
+        initBackground();
+        initBlur();
 
+        WaImageView mWa = findViewById(R.id.fab_aux);
         setTitle(homeTitle());
         getSupportActionBar().setSubtitle(R.string.sum_hideplay_broadcast);
-        search();
 
-        mNav = new SimpleSideDrawer(this);
-        mNav.setRightBehindContentView(R.layout.delta_dialer_activity);
+        customSearch();
+        initFab(mWa);
+
+        // if(Tools.checkInternetNow())Tools.showToast("Has Internet");
 
         //antiMaling
-        z();
+      /*  z();
         TextView m = findViewById(getResources().getIdentifier("mInfo", "id", getPackageName()));
         m.setVisibility(View.GONE);
         m.setText(c(Me));
-        m.setTextColor(drawerLabel());
-
-        Wallpaper.setDatafolder();
-        initWall();
-
-        WaImageView mWa = findViewById(R.id.fab_aux);
-        initFab(mWa);
-        initBackground();
-
-       // CardView
-
-        View mRootView = findViewById(Tools.intId("root_view"));
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_HOME_BACKGROUND), false)){
-            mRootView.setBackgroundColor(Prefs.getInt(Keys.KEY_HOME_BACKGROUND, Themes.windowBackground()));
-        }
-
-       // if(Tools.checkInternetNow())Tools.showToast("Has Internet");
+        m.setTextColor(drawerLabel());*/
 
         //Anti DCRC Ampuh
         //setSign(this, "9622e43e79a54fb67d3fe58ca55444666a32e0a8");
 
-        mCurvedNavigation = findViewById(Tools.intId("mCurvedNavigation"));
-      //  mCurvedNavigation.onStartSelected();
-      //  new PageListener(this, mPager).onSelectPage();
-
-        blurView();
+        showToast(String.valueOf(badge));
 
     }
 
-    private void blurView(){
+    private void initBlur(){
         FrameLayout mFrame = findViewById(Tools.intId("root_view"));
         BlurView mBlur = findViewById(Tools.intId("mBlur"));
-      //  FrameLayout mFrame = findViewById(getResources().getIdentifier("root_view", "id", getPackageName()));
-      //  BlurView mBlur = findViewById(getResources().getIdentifier("mBlur", "id", getPackageName()));
 
         final float radius = 10f;
         final Drawable windowBackground = getWindow().getDecorView().getBackground();
@@ -226,23 +209,6 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
 
     }
 
-    private void search(){
-        SearchView mSearch = findViewById(R.id.delta_search_view);
-        mSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                Tools.showToast(s);
-                return false;
-            }
-        });
-
-    }
-
     public void createDialog(){
         DialogAdd mAdd = new DialogAdd(this,this);
         mAdd.show();
@@ -263,7 +229,109 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         final LinearLayout mAppBar = findViewById(Tools.intId("mAppBar"));
         mAppBar.setBackgroundColor(Colors.setWarnaPrimer());
         mNavigationDrawer = findViewById(Tools.intId("drawer"));
+        mCurvedNavigation = findViewById(Tools.intId("mCurvedNavigation"));
+        mStatusContainer = findViewById(Tools.intId("mStatusContainer"));
+    }
 
+    public void newChat(){
+        Tools.showToast("CHAT");
+    }
+
+    public void newCall(){
+        Tools.showToast("CALL");
+    }
+
+    @Override
+    public void onAddListener(String add) {
+        try{
+            if(add.equals("custom")){
+                Actions.startActivity(this, DialerActivity.class);
+            }
+            if(add.equals("group")){
+                NewGroup.a(this, 2, null);
+            }
+            if(add.equals("broadcast")){
+                Actions.startActivity(this, ListMembersSelector.class);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    private void initFab(ImageView mImage){
+        Drawable bg = mImage.getBackground();
+        bg.setColorFilter(Colors.warnaFab(), PorterDuff.Mode.SRC_ATOP);
+        mImage.setBackground(bg);
+        mImage.setColorFilter(Colors.warnaFabIcon());
+    }
+
+    public void statusView(String posisi){
+        if(posisi.equals("BAWAH")){
+            mStatusContainer.setVisibility(View.GONE);
+        }else {
+            mStatusContainer.setVisibility(View.VISIBLE);
+        }
+    }
+
+
+    private void customSearch(){
+        SearchView mSearch = findViewById(R.id.delta_search_view);
+        mSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                Tools.showToast(s);
+                return false;
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(!mNavigationDrawer.onBackPressed()|| processOnBackPressed()){
+            super.onBackPressed();
+        }
+    }
+
+    private boolean processOnBackPressed() {
+        return false;
+    }
+
+    @Override
+    public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+    }
+
+    @Override
+    public void onDownMotionEvent() {
+
+    }
+
+    @Override
+    public void onUpOrCancelMotionEvent(ScrollState scrollState) {
+        if(scrollState.equals(ScrollState.DOWN)){
+            statusView("ATAS");
+        }else {
+            statusView("BAWAH");
+        }
+    }
+
+    public void initScroll(Fragment fragment, View view){
+        Activity activity = fragment.getActivity();
+        final ObservableListView mList = view.findViewById(android.R.id.list);
+        if (activity instanceof ObservableScrollViewCallbacks) {
+            mList.setScrollViewCallbacks((ObservableScrollViewCallbacks) activity);
+        }
+
+    }
+
+    public void showToast(String toast){
+        Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -292,71 +360,4 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         super.onResume();
     }
 
-    @Override
-    public void onAddListener(String add) {
-        try{
-            if(add.equals("custom")){
-                Actions.startActivity(this, DialerActivity.class);
-            }
-            if(add.equals("group")){
-                NewGroup.a(this, 2, null);
-            }
-            if(add.equals("broadcast")){
-                Actions.startActivity(this, ListMembersSelector.class);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-    }
-
-    private void initFab(ImageView mImage){
-        Drawable bg = mImage.getBackground();
-        bg.setColorFilter(Colors.warnaFab(), PorterDuff.Mode.SRC_ATOP);
-        mImage.setBackground(bg);
-        mImage.setColorFilter(Colors.warnaFabIcon());
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        if(!mNavigationDrawer.onBackPressed()|| processOnBackPressed()){
-            super.onBackPressed();
-        }
-    }
-
-    private boolean processOnBackPressed() {
-        return false;
-    }
-
-    @Override
-    public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-    }
-
-    @Override
-    public void onDownMotionEvent() {
-
-    }
-
-    @Override
-    public void onUpOrCancelMotionEvent(ScrollState scrollState) {
-        View mStatusContainer = findViewById(Tools.intId("mBlur"));
-        if(scrollState.equals(ScrollState.DOWN)){
-            mStatusContainer.setVisibility(View.VISIBLE);
-        }else {
-            mStatusContainer.setVisibility(View.GONE);
-        }
-    }
-
-    public void initScroll(Fragment fragment, View view){
-        Activity activity = fragment.getActivity();
-        ObservableListView mList = view.findViewById(android.R.id.list);
-        if (activity instanceof ObservableScrollViewCallbacks) {
-            mList.setScrollViewCallbacks((ObservableScrollViewCallbacks) activity);
-        }
-    }
-
-    public void showToast(String toast){
-        Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
-    }
 }

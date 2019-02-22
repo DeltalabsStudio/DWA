@@ -1,5 +1,6 @@
 package com.whatsapp;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -27,7 +28,9 @@ public class HomeTabsAdapter extends FragmentStatePagerAdapter {
                 fragment=new CallsFragment();
                 break;
         }
-
+        Bundle args = new Bundle();
+        args.putInt(HomeActivity.ARG_INITIAL_POSITION, 1);
+        fragment.setArguments(args);
         return fragment;
     }
 

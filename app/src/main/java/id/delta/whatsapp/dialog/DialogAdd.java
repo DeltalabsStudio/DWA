@@ -1,6 +1,7 @@
 package id.delta.whatsapp.dialog;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.design.widget.c;
@@ -8,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.whatsapp.TextStatusComposerActivity;
+
+import id.delta.whatsapp.activities.VideoActivity;
 import id.delta.whatsapp.utils.Tools;
 import id.delta.whatsapp.value.Themes;
 
@@ -45,6 +49,7 @@ public class DialogAdd {
             LinearLayout mCustom = (LinearLayout)alertLayout.findViewById(intId("mCustom"));
             LinearLayout mGroup = (LinearLayout)alertLayout.findViewById(intId("mGroup"));
             LinearLayout mBroadcast = (LinearLayout)alertLayout.findViewById(intId("mBroadcast"));
+            LinearLayout mStatus = (LinearLayout)alertLayout.findViewById(Tools.intId("mStatus"));
 
             mCustom.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,6 +72,14 @@ public class DialogAdd {
                 public void onClick(View v) {
                     mAddListener.onAddListener("broadcast");
                     mBottomSheetDialog.dismiss();
+                }
+            });
+
+            mStatus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mBottomSheetDialog.dismiss();
+                    context.startActivity(new Intent(context, VideoActivity.class));
                 }
             });
 

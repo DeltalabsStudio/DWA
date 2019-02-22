@@ -114,6 +114,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+
+        <View
+            android:layout_width="1.0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="35.0dp"
+            android:background="?android:listDivider"/>
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:id="@+id/mStatus"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content">
+
+            <id.delta.whatsapp.ui.accent.AccentImageView
+                android:src="@drawable/delta_ic_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.whatsapp.WaTextView
+                android:singleLine="true"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:text="Split"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

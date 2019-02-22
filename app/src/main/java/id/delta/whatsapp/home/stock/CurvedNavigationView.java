@@ -86,7 +86,15 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
                 ((HomeActivity) mContext).createDialog();
             }
         }else if(v.getId()==mFabIds[1]){
-            mContext.startActivity(new Intent(mContext, CameraActivity.class));
+            mContext.startActivity(new Intent(mContext, TextStatusComposerActivity.class));
+        }else if(v.getId()==mFabIds[0]){
+            if(mContext instanceof HomeActivity){
+                ((HomeActivity) mContext).newChat();
+            }
+        }else if(v.getId()==mFabIds[2]){
+            if(mContext instanceof HomeActivity){
+                ((HomeActivity) mContext).newCall();
+            }
         }
     }
 
@@ -104,7 +112,7 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
                     mFab.setOnLongClickListener(new OnLongClickListener() {
                         @Override
                         public boolean onLongClick(View v) {
-                            mContext.startActivity(new Intent(mContext, TextStatusComposerActivity.class));
+                            mContext.startActivity(new Intent(mContext, CameraActivity.class));
                             return false;
                         }
                     });
@@ -150,7 +158,7 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
             mAdd.setVisibility(VISIBLE);
 
             mCurvedBottom.setPosistion(CurvedBottom.START);
-            mOne.setVisibility(INVISIBLE);
+            mOne.setVisibility(VISIBLE);
             mTwo.setVisibility(VISIBLE);
             mThree.setVisibility(VISIBLE);
             fOne.setVisibility(VISIBLE);
@@ -187,7 +195,7 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
             mCurvedBottom.setPositionEnd();
             mOne.setVisibility(VISIBLE);
             mTwo.setVisibility(VISIBLE);
-            mThree.setVisibility(INVISIBLE);
+            mThree.setVisibility(VISIBLE);
             fOne.setVisibility(INVISIBLE);
             fTwo.setVisibility(INVISIBLE);
             fThree.setVisibility(VISIBLE);
@@ -196,4 +204,6 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
             e.printStackTrace();
         }
     }
+
+
 }
