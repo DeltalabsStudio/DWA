@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
-import id.delta.whatsapp.R;
 
 public class MarqueeToolbar extends Toolbar {
     private static final int MARQUEE_DELAY = 1200;
@@ -39,7 +38,7 @@ public class MarqueeToolbar extends Toolbar {
     public MarqueeToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        final TypedArray a =
+     /*   final TypedArray a =
                 context.getTheme().obtainStyledAttributes(attrs, R.styleable.MarqueeToolbar, 0, 0);
         try {
             mDelay = a.getInt(R.styleable.MarqueeToolbar_startDelay, MARQUEE_DELAY);
@@ -53,7 +52,16 @@ public class MarqueeToolbar extends Toolbar {
             setSubtitle(subtitleText);
         } finally {
             a.recycle();
-        }
+        }*/
+     try{
+         mDelay = MARQUEE_DELAY;
+         mRepeatTitle = -1;
+         mRepeatSubtitle = -1;
+         mTitleMarqueeEnabled = true;
+         mSubtitleMarqueeEnabled = true;
+     }finally {
+
+     }
     }
 
     @Override

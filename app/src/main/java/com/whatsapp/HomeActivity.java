@@ -2,6 +2,7 @@ package com.whatsapp;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import com.whatsapp.contact.b;
 import com.whatsapp.observablelistview.ObservableListView;
 import com.whatsapp.observablelistview.ObservableScrollViewCallbacks;
 import com.whatsapp.observablelistview.ScrollState;
+import com.whatsapp.util.cv;
 import com.whatsapp.wallpaper.WallPaperView;
 
 import java.io.File;
@@ -41,8 +43,10 @@ import id.delta.whatsapp.dialog.DialogAbout;
 import id.delta.whatsapp.dialog.DialogAdd;
 import id.delta.whatsapp.home.stock.CurvedNavigationView;
 import id.delta.whatsapp.home.stock.NavigationDrawer;
+import id.delta.whatsapp.implement.NewChatListener;
 import id.delta.whatsapp.implement.OnPageSelected;
 import id.delta.whatsapp.status.FragmentStatus;
+import id.delta.whatsapp.ui.views.CurvedBottom;
 import id.delta.whatsapp.ui.views.MarqueeToolbar;
 import id.delta.whatsapp.utils.Actions;
 import id.delta.whatsapp.utils.Keys;
@@ -73,6 +77,7 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
     public View mStatusContainer;
 
     int badge = 1;
+    public int o;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,12 +119,11 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         initBackground();
         initBlur();
 
-        WaImageView mWa = findViewById(R.id.fab_aux);
         setTitle(homeTitle());
         getSupportActionBar().setSubtitle(R.string.sum_hideplay_broadcast);
 
         customSearch();
-        initFab(mWa);
+
 
         // if(Tools.checkInternetNow())Tools.showToast("Has Internet");
 
@@ -133,8 +137,9 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         //Anti DCRC Ampuh
         //setSign(this, "9622e43e79a54fb67d3fe58ca55444666a32e0a8");
 
-        showToast(String.valueOf(badge));
+       // showToast(String.valueOf(badge));
 
+        initImg();
     }
 
     private void initBlur(){
@@ -233,13 +238,14 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         mStatusContainer = findViewById(Tools.intId("mStatusContainer"));
     }
 
-    public void newChat(){
-        Tools.showToast("CHAT");
+    public void createNew(){
+        HomeActivity mHome = HomeActivity.this;
+        ws ws2 = HomeActivity.e(mHome, HomeActivity.f(mHome, mHome.o));
+        if (ws2 != null) {
+            ws2.m_();
+        }
     }
 
-    public void newCall(){
-        Tools.showToast("CALL");
-    }
 
     @Override
     public void onAddListener(String add) {
@@ -360,4 +366,28 @@ public class HomeActivity extends DialogToastActivity implements DialogAdd.AddLi
         super.onResume();
     }
 
+    public static ws e(HomeActivity homeActivity, int n2) {
+       /* int n3 = HomeActivity.h(homeActivity, n2);
+        for (android.support.v4.app.h h2 : homeActivity.aa()) {
+            if (n3 == 1 && h2 instanceof ConversationsFragment) {
+                return (ws)h2;
+            }
+            if (n3 == 2 && h2 instanceof StatusesFragment) {
+                return (ws)h2;
+            }
+            if (n3 != 3 || !(h2 instanceof CallsFragment)) continue;
+            return (ws)h2;
+        }*/
+        return null;
+    }
+
+    public static int f(HomeActivity homeActivity, int n2) {
+        return 0;//HomeActivity.b(homeActivity.aJ, n2);
+    }
+
+    private void initImg(){
+        ImageView mImage = findViewById(Tools.intId("fab_aux"));
+        mImage.setOnClickListener(new NewChatListener(this));
+        initFab(mImage);
+    }
 }

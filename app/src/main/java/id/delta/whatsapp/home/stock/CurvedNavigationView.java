@@ -2,8 +2,7 @@ package id.delta.whatsapp.home.stock;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,7 +18,6 @@ import com.whatsapp.HomeActivity;
 import com.whatsapp.TextStatusComposerActivity;
 import com.whatsapp.camera.CameraActivity;
 
-import id.delta.whatsapp.R;
 import id.delta.whatsapp.ui.views.CurvedBottom;
 import id.delta.whatsapp.ui.views.FloatingActionButton;
 import id.delta.whatsapp.utils.Tools;
@@ -89,11 +87,11 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
             mContext.startActivity(new Intent(mContext, TextStatusComposerActivity.class));
         }else if(v.getId()==mFabIds[0]){
             if(mContext instanceof HomeActivity){
-                ((HomeActivity) mContext).newChat();
+                ((HomeActivity) mContext).createNew();
             }
         }else if(v.getId()==mFabIds[2]){
             if(mContext instanceof HomeActivity){
-                ((HomeActivity) mContext).newCall();
+                ((HomeActivity) mContext).createNew();
             }
         }
     }
@@ -119,8 +117,9 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
                 }
 
                 TextView mLabel = (TextView)findViewById(mLabelIds[i]);
-                mLabel.setTextSize(11.0f);
+                mLabel.setTextSize(12.0f);
                 mLabel.setTextColor(Colors.naviconColor(0));
+                mLabel.setTypeface(Typeface.DEFAULT_BOLD);
 
                 Icons.customIcons(mContext, i, mImage, mFab);
 
