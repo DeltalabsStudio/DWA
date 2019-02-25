@@ -12,14 +12,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 import id.delta.whatsapp.R;
-import id.delta.whatsapp.home.fragments.StatusesAdapter;
-import id.delta.whatsapp.ui.views.Card;
 import id.delta.whatsapp.ui.views.FunkyHeader;
 import id.delta.whatsapp.value.Row;
 
@@ -27,10 +24,6 @@ import id.delta.whatsapp.value.Row;
 public class CallsFragment extends ListFragment {
 
     private String dataArray[];
-
-    RecyclerView mStatusesRecyclerView;
-    StatusesFragment mStockStatusesFragment;
-    StatusesAdapter mStatusesAdapter;
 
     public CallsFragment() {
         dataArray = new String[] { "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam","Tujuh", "Delapan", "Sembilan","Sepuluh", "Sebelas", "Dua Belas","Tiga Belas","Empat Belas", "Lima Belas", "Enam Belas","Tujuh Belas", "Delapan Belas", "Sembilan Belas"};

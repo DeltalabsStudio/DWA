@@ -15,11 +15,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.whatsapp.HomeActivity;
+import com.whatsapp.ListMembersSelector;
+import com.whatsapp.NewGroup;
 import com.whatsapp.TextStatusComposerActivity;
 import com.whatsapp.camera.CameraActivity;
 
+import id.delta.whatsapp.activities.DialerActivity;
+import id.delta.whatsapp.dialog.DialogAdd;
 import id.delta.whatsapp.ui.views.CurvedBottom;
 import id.delta.whatsapp.ui.views.FloatingActionButton;
+import id.delta.whatsapp.utils.Actions;
 import id.delta.whatsapp.utils.Tools;
 import id.delta.whatsapp.value.Colors;
 import id.delta.whatsapp.value.Icons;
@@ -27,6 +32,10 @@ import id.delta.whatsapp.value.Icons;
 public class CurvedNavigationView extends FrameLayout implements ViewTreeObserver.OnGlobalLayoutListener, View.OnClickListener{
 
     private Context mContext;
+
+    public int CHAT = 1;
+    public int STATUS = 2;
+    public int CALL = 3;
 
     private int [] mImageIds = {Tools.intId("iOne"), Tools.intId("iTwo"), Tools.intId("iThree"), Tools.intId("iMenu"), Tools.intId("iAdd")};
     private int [] mFabIds = {Tools.intId("mFabOne"),Tools.intId("mFabTwo"),Tools.intId("mFabThree"), Tools.intId("mFabMenu"), Tools.intId("mFabAdd")};
@@ -63,25 +72,39 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
         if(v == mOne){
             onStartSelected();
             if(mContext instanceof HomeActivity){
-                ((HomeActivity) mContext).selectPage(1);
+                ((HomeActivity) mContext).selectPage(CHAT);
             }
         }else if(v == mTwo){
             onCenterSelected();
             if(mContext instanceof HomeActivity){
-                ((HomeActivity) mContext).selectPage(2);
+                ((HomeActivity) mContext).selectPage(STATUS);
             }
         }else if(v == mThree){
             onEndSelected();
             if(mContext instanceof HomeActivity){
-                ((HomeActivity) mContext).selectPage(3);
+                ((HomeActivity) mContext).selectPage(CALL);
             }
         }else if(v == mMenu){
             if(mContext instanceof HomeActivity){
+              //  ((HomeActivity) mContext).mNavigationDrawer.setOpen(true);
                 ((HomeActivity) mContext).mNavigationDrawer.setOpen(true);
             }
         }else if(v == mAdd){
             if(mContext instanceof HomeActivity){
-                ((HomeActivity) mContext).createDialog();
+                new DialogAdd(mContext, new DialogAdd.AddListener() {
+                    @Override
+                    public void onAddListener(String add) {
+                        if(add.equals("custom")){
+                            Actions.startActivity(mContext, DialerActivity.class);
+                        }
+                        if(add.equals("group")){
+                            NewGroup.a((HomeActivity) mContext, 2, null);
+                        }
+                        if(add.equals("broadcast")){
+                            Actions.startActivity(mContext, ListMembersSelector.class);
+                        }
+                    }
+                }).show();
             }
         }else if(v.getId()==mFabIds[1]){
             mContext.startActivity(new Intent(mContext, TextStatusComposerActivity.class));
@@ -119,7 +142,7 @@ public class CurvedNavigationView extends FrameLayout implements ViewTreeObserve
                 TextView mLabel = (TextView)findViewById(mLabelIds[i]);
                 mLabel.setTextSize(12.0f);
                 mLabel.setTextColor(Colors.naviconColor(0));
-                mLabel.setTypeface(Typeface.DEFAULT_BOLD);
+               // mLabel.setTypeface(Typeface.DEFAULT_BOLD);
 
                 Icons.customIcons(mContext, i, mImage, mFab);
 

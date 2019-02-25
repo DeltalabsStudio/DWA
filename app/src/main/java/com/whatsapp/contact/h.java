@@ -7,7 +7,7 @@ public class h {
 
     //parseNumber
     public static String a(ft contactInfo) {
-        return contactInfo.mJabberId;
+        return "+62 8 22 0000-0000";//contactInfo.mJabberId;
     }
 
 }

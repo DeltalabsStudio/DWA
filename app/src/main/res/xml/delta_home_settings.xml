@@ -135,6 +135,15 @@
         android:layout="@layout/delta_preference_category"
         android:title="Status"/>
 
+    <CheckBoxPreference
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_hide_status"
+        android:key="key_hide_status"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
     <id.delta.whatsapp.views.colorpicker.ColorCheckPreference
         android:key="key_status_title_picker"
         android:layout="@layout/delta_preference_layout"

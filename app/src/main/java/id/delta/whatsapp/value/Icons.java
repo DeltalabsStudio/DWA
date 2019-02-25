@@ -26,15 +26,11 @@ public class Icons {
 
     public static String deltaPath = "WhatsApp/DELTA/";
 
-    private static int [] mImageIcon = {Tools.intDrawable("delta_ic_msg"), Tools.intDrawable("delta_ic_status"), Tools.intDrawable("ic_action_call"), Tools.intDrawable("delta_ic_menus"), Tools.intDrawable("delta_ic_create")};
-
-    private static String [] mIconName = {"ic_chats","ic_cameras","ic_calls", "ic_menu", "ic_add"};
-
     private static String iconAssets= "file:///android_asset/icons/";
 
-    private static String iconPath = deltaPath+"icons/";
+    public static String iconPath = deltaPath+"icons/";
 
-    private static String fileType = ".png";
+    public static String fileType = ".png";
 
     public static void copyIcons(Context context){
        // int count = -1;
@@ -49,7 +45,7 @@ public class Icons {
             //  count = new AssetCopier(context).withFileScanning().copy("icons", new File(Environment.getExternalStorageDirectory(), iconPath));
         }catch (Exception e){
             e.printStackTrace();
-            Tools.showToast("Can't find Icons folder!");
+            Tools.showToast("Please, allow storage permission!");
         }
        // Tools.showToast((count==-1 ? "There was an error copying" : "files copied " + count));
     }
@@ -59,7 +55,6 @@ public class Icons {
             copyIcons(mContext);
             Picasso.with(mContext).load(mImageIcon[i]).into(mImage);
             Picasso.with(mContext).load(mImageIcon[i]).into(mFab);
-
             return;
         }
         if(Prefs.getBoolean(Keys.KEY_CUSTOM_ICON, false)){
@@ -70,6 +65,56 @@ public class Icons {
             Picasso.with(mContext).load(mImageIcon[i]).into(mFab);
         }
     }
+
+    public static int [] mItemResource = {
+            Tools.intDrawable("delta_ic_more"),
+            Tools.intDrawable("ic_action_archive"),
+            Tools.intDrawable("ic_action_star"),
+            Tools.intDrawable("notify_web_client_connected"),
+            Tools.intDrawable("delta_ic_addgroup"),
+            Tools.intDrawable("delta_ic_notif"),
+            Tools.intDrawable("delta_ic_security"),
+            Tools.intDrawable("delta_ic_settings"),
+            Tools.intDrawable("ic_account_box"),
+            Tools.intDrawable("ic_action_compose"),
+            Tools.intDrawable("ic_settings_notifications"),
+            Tools.intDrawable("ic_settings_data"),
+            Tools.intDrawable("ic_settings_help")
+    };
+
+
+    public static String [] mItemName = {
+            "ic_stock",
+            "ic_archive",
+            "ic_star",
+            "ic_web",
+            "ic_addgroup",
+            "ic_broadcast",
+            "ic_privacy",
+            "ic_settings",
+            "ic_account",
+            "ic_msg",
+            "ic_notif",
+            "ic_storage",
+            "ic_help"
+    };
+
+    private static int [] mImageIcon = {
+            Tools.intDrawable("delta_ic_msg"),
+            Tools.intDrawable("delta_ic_status"),
+            Tools.intDrawable("ic_action_call"),
+            Tools.intDrawable("delta_ic_menus"),
+            Tools.intDrawable("delta_ic_create")
+    };
+
+    private static String [] mIconName = {
+            "ic_chats",
+            "ic_cameras",
+            "ic_calls",
+            "ic_menu",
+            "ic_add"
+    };
+
 
 }
 

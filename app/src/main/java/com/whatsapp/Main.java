@@ -24,12 +24,12 @@ public class Main extends DialogToastActivity {
         Thread timerThread = new Thread(){
             public void run(){
                 try{
-                    sleep(100);
+                    sleep(500);
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }finally{
 
-                    Intent intent = new Intent(Main.this, Actions.defaultHome());
+                    Intent intent = new Intent(Main.this, HomeActivity.class);
                     startActivity(intent);
 
                 }

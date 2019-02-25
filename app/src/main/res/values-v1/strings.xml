@@ -126,4 +126,7 @@
     <string name="title_split_activity">Split Video</string>
     <string name="title_trim_activity">Trim Video</string>
     <string name="title_video_activity">Select Video</string>
+    <string name="more">More</string>
+    <string name="pref_hide_status">Hide Status event Scrolling</string>
+    <string name="pref_custom_font">Custom Fonts</string>
 </resources>

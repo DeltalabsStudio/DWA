@@ -92,7 +92,7 @@ public class Main {
     }
 
     public static int titleColor(){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_MAINTITLE), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_MAINTITLE), false)){
             return Prefs.getInt(Keys.KEY_MAINTITLE, Colors.warnaAutoTitle());
         }else {
             return Colors.warnaAutoTitle();
@@ -100,7 +100,7 @@ public class Main {
     }
 
     public static int subtitleColor(){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_MAINSUBTITLE), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_MAINSUBTITLE), false)){
             return Prefs.getInt(Keys.KEY_MAINSUBTITLE, Colors.warnaAutoTitle());
         }else {
             return Colors.warnaAutoTitle();
@@ -162,7 +162,7 @@ public class Main {
 
     //Status Recycler
     public static int statusTitle(){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_STATUSTITLE_COLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_STATUSTITLE_COLOR), false)){
             return Prefs.getInt(Keys.KEY_STATUSTITLE_COLOR, Themes.themedTextColor());
         }else {
             return Themes.themedTextColor();
@@ -170,7 +170,7 @@ public class Main {
     }
 
     public static int statusSeenColor (){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_STATUSSEEN_COLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_STATUSSEEN_COLOR), false)){
             return Prefs.getInt(Keys.KEY_STATUSSEEN_COLOR, 0xffbbbec4);
         }else {
             return 0xffbbbec4;
@@ -178,7 +178,7 @@ public class Main {
     }
 
     public static int statusUnseenColor (){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_STATUSUNSEEN_COLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_STATUSUNSEEN_COLOR), false)){
             return Prefs.getInt(Keys.KEY_STATUSUNSEEN_COLOR, Colors.setWarnaAksen());
         }else {
             return Colors.setWarnaAksen();
@@ -187,7 +187,7 @@ public class Main {
 
 
     public static int drawerTitle (){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_DRAWER_TITLE), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_DRAWER_TITLE), false)){
             return Prefs.getInt(Keys.KEY_DRAWER_TITLE, Colors.warnaAutoTitle());
         }else {
             return Colors.warnaAutoTitle();
@@ -195,7 +195,7 @@ public class Main {
     }
 
     public static int drawerLabel (){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_DRAWER_LABEL), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_DRAWER_LABEL), false)){
             return Prefs.getInt(Keys.KEY_DRAWER_LABEL, Themes.themedTextColor());
         }else {
             return Themes.themedTextColor();
@@ -203,7 +203,7 @@ public class Main {
     }
 
     public static int drawerBackground(){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_DRAWER_BG), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_DRAWER_BG), false)){
            return Prefs.getInt(Keys.KEY_DRAWER_BG, Themes.sheetBackground());
         }else {
             return Themes.sheetBackground();

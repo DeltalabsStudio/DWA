@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Callygraphi-->
+    <public name="fontPath" type="attr"/>
+    <item name="calligraphy_tag_id" type="id"/>
+    <attr name="fontPath" format="string"/>
 
     <attr name="label" format="string" />
     <attr name="toolbar_popup_theme" format="reference" />

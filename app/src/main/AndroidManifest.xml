@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.whatsapp.Main">
+        <activity android:name="com.whatsapp.Main" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +28,6 @@
         <activity android:name="com.whatsapp.TextStatusComposerActivity" />
         <activity android:name="com.whatsapp.ArchivedConversationsActivity" />
 
-        <activity android:theme="@style/Theme.App.Home" android:name=".activities.MainActivity" />
         <activity android:name="com.whatsapp.Conversation" android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:theme="@style/Theme.App.Home" android:label="@string/delta_settings" android:name=".activities.SettingsActivity" />
         <activity android:theme="@style/Theme.App.Home" android:label="WhatsApp" android:name="com.whatsapp.HomeActivity" />
@@ -41,6 +40,7 @@
         <activity android:label="@string/title_video_activity" android:name=".activities.VideoActivity"/>
         <activity android:label="@string/title_split_activity" android:name=".activities.SplitActivity" />
         <activity android:label="@string/title_trim_activity" android:name=".activities.PartActivity" />
+        <activity android:name="com.whatsapp.GroupMembersSelector" />
     </application>
 
 </manifest>

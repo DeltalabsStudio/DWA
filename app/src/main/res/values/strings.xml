@@ -12,7 +12,7 @@
     <string name="menuitem_list">New broadcast</string>
     <string name="cancel">Cancel</string>
     <string name="wallpaper_preview_set">Set Wallpaper</string>
-
+    <string name="menuitem_settings">Settings</string>
     <string-array name="pesan">
         <item>@string/sum_backup_data</item>
         <item>@string/sum_blueonreply</item>

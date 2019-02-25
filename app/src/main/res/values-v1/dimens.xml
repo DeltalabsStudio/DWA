@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="tinggi_top">160dp</dimen>
-    <dimen name="dimen_nol">0dp</dimen>
+    <dimen name="dimen_nol">0dp</dimen>s
+    <dimen name="tinggi_status">152dp</dimen>
 </resources>

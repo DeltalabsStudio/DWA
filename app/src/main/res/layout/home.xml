@@ -47,6 +47,7 @@
                             android:id="@+id/mToolbar"
                             android:layout_weight="1"
                             android:layout_width="0.0dp"
+                            fontPath="fonts/billabong.ttf"
                             whatsapp:subtitleTextAppearance="@style/homeSubtitle"
                             android:layout_height="?attr/actionBarSize"/>
 
@@ -58,22 +59,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:id="@+id/mStatusContainer"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <FrameLayout
-                            android:id="@+id/home_fragment"
+                        <LinearLayout
+                            android:id="@+id/mStatusContainer"
+                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="@dimen/tinggi_status">
 
-                        <include layout="@layout/delta_search_view"/>
 
-                    </LinearLayout>
+                            <FrameLayout
+                                android:id="@+id/home_fragment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
 
+                            <include layout="@layout/delta_search_view"/>
+
+                        </LinearLayout>
                     </com.eightbitlab.blurview.BlurView>
                 </LinearLayout>
                 <LinearLayout
@@ -106,76 +106,6 @@
 
             <include layout="@layout/delta_curved_content"/>
 
-            <id.delta.whatsapp.home.stock.NavigationView
-                android:visibility="gone"
-                android:id="@+id/mNavigationBottom"
-                android:layout_gravity="bottom"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <id.delta.whatsapp.ui.views.CurvedBottom
-                    android:layout_gravity="bottom"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="56.0dp">
-
-                    <id.delta.whatsapp.home.content.BottomNavigationItemView
-                        android:id="@+id/bnv_menu"
-                        android:layout_width="0.0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.0"
-                        whatsapp:label="@string/nav_menu"
-                        whatsapp:icon="@drawable/delta_ic_menu" />
-
-                    <id.delta.whatsapp.home.content.BottomNavigationItemView
-                        android:id="@+id/bnv_chats"
-                        android:layout_width="0.0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.0"
-                        whatsapp:label="@string/nav_chat"
-                        whatsapp:icon="@drawable/delta_ic_allo" />
-
-                    <id.delta.whatsapp.home.content.BottomNavigationItemView
-                        android:visibility="invisible"
-                        android:layout_width="0.0dp"
-                        android:layout_height="match_parent"
-                        android:id="@+id/fab"
-                        whatsapp:label="@string/nav_add"
-                        whatsapp:icon="@drawable/ic_camera_status_compose"
-                        android:layout_weight="1.0"/>
-
-                    <id.delta.whatsapp.home.content.BottomNavigationItemView
-                        android:id="@+id/bnv_calls"
-                        android:layout_width="0.0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.0"
-                        whatsapp:label="@string/nav_calls"
-                        whatsapp:icon="@drawable/ic_action_call" />
-
-                    <id.delta.whatsapp.home.content.BottomNavigationItemView
-                        android:id="@+id/bnv_create"
-                        android:layout_width="0.0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.0"
-                        whatsapp:label="@string/nav_add"
-                        whatsapp:icon="@drawable/delta_ic_number" />
-
-
-                </id.delta.whatsapp.ui.views.CurvedBottom>
-
-                <id.delta.whatsapp.ui.views.FloatingActionButton
-                    android:id="@+id/bnv_camera"
-                    android:layout_gravity="center|bottom"
-                    android:visibility="invisible"
-                    whatsapp:fab_size="normal"
-                    android:layout_marginBottom="20dp"
-                    android:src="@drawable/ic_camera_status_compose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </id.delta.whatsapp.home.stock.NavigationView>
-
             <FrameLayout android:id="@+id/search_holder" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material" >
                 <include layout="@layout/home_search_view_layout"/>
             </FrameLayout>
@@ -197,7 +127,6 @@
                     android:layout_height="0.0dp"/>
 
         </LinearLayout>
-
 
 
     </FrameLayout>

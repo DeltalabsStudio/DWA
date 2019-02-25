@@ -1,6 +1,5 @@
 package com.whatsapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,16 +14,12 @@ import android.widget.TextView;
 
 
 import com.whatsapp.observablelistview.ObservableListView;
-import com.whatsapp.observablelistview.ObservableScrollViewCallbacks;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import id.delta.whatsapp.R;
-import id.delta.whatsapp.home.fragments.StatusesAdapter;
-import id.delta.whatsapp.implement.OnDetectScrollView;
 import id.delta.whatsapp.ui.views.Card;
-import id.delta.whatsapp.ui.views.ListScrolView;
 import id.delta.whatsapp.value.Row;
 
 
@@ -32,10 +27,6 @@ public class ConversationsFragment extends ListFragment {
 
     List<Chat> chatList;
     private ChatsAdapter chatsAdapter;
-
-    RecyclerView mStatusesRecyclerView;
-    StatusesFragment mStockStatusesFragment;
-    StatusesAdapter mStatusesAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

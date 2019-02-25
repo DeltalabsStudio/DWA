@@ -1,34 +1,21 @@
 package id.delta.whatsapp.value;
 
-import android.app.Activity;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.a;
 import android.support.v7.widget.ao;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.whatsapp.MentionableEntry;
-import com.whatsapp.WaImageButton;
-import com.whatsapp.wallpaper.WallPaperView;
 
-import id.delta.whatsapp.activities.SettingsActivity;
-import id.delta.whatsapp.dialog.DialogDnd;
-import id.delta.whatsapp.utils.Actions;
 import id.delta.whatsapp.utils.Keys;
 import id.delta.whatsapp.utils.Prefs;
 import id.delta.whatsapp.utils.Tools;
 
-import static android.graphics.PorterDuff.Mode.SRC_IN;
-import static id.delta.whatsapp.utils.Tools.intStyle;
 import static id.delta.whatsapp.value.Themes.customBackground;
 
 public class Conversation {
@@ -81,7 +68,7 @@ public class Conversation {
     }
 
     public static int inputBackground(){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_INPUT_BACKGROUND), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_INPUT_BACKGROUND), false)){
             return Prefs.getInt(Keys.KEY_INPUT_BACKGROUND, disableTheme());
         }else {
             return disableTheme();
@@ -89,7 +76,7 @@ public class Conversation {
     }
 
     public static void titleColor(TextView mTextView){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_CHAT_TITLE_COLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_CHAT_TITLE_COLOR), false)){
             mTextView.setTextColor(Prefs.getInt(Keys.KEY_CHAT_TITLE_COLOR, Colors.warnaAutoTitle()));
         }else {
             mTextView.setTextColor(Colors.warnaAutoTitle());
@@ -97,7 +84,7 @@ public class Conversation {
     }
 
     public static void subtitleColor(TextView mTextView){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_CHAT_SUBTITLE_COLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_CHAT_SUBTITLE_COLOR), false)){
             mTextView.setTextColor(Prefs.getInt(Keys.KEY_CHAT_SUBTITLE_COLOR, Colors.warnaAutoSubtitle()));
         }else {
             mTextView.setTextColor(Colors.warnaAutoSubtitle());
@@ -110,7 +97,7 @@ public class Conversation {
             if (mBack != null) {
                 Drawable d = mBack.getDrawable();
                 if (d != null) {
-                    if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_CHAT_BACK_COLOR), false)){
+                    if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_CHAT_BACK_COLOR), false)){
                         d.setColorFilter(Prefs.getInt(Keys.KEY_CHAT_BACK_COLOR, Colors.warnaAutoTitle()), PorterDuff.Mode.SRC_IN);
                     }else {
                         d.setColorFilter(Colors.warnaAutoTitle(), PorterDuff.Mode.SRC_IN);
@@ -135,13 +122,13 @@ public class Conversation {
                         mIcon = (ao) vg.getChildAt(2);
                     }
 
-                    if ((vg.getChildAt(0) instanceof TextView) && (Prefs.getBoolean(Keys.CHECK(Keys.KEY_CHAT_TITLE_COLOR), false))) {
+                    if ((vg.getChildAt(0) instanceof TextView) && (Prefs.getBoolean(Tools.CHECK(Keys.KEY_CHAT_TITLE_COLOR), false))) {
                         ((TextView) vg.getChildAt(0)).setTextColor(Prefs.getInt(Keys.KEY_CHAT_TITLE_COLOR, Colors.warnaAutoTitle()));
                     }
                     for (int i = 0; i < mIcon.getChildCount(); i++) {
                         if (mIcon.getChildAt(i) instanceof ImageView) {
                             ImageView img = (ImageView) mIcon.getChildAt(i);
-                            if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_CHAT_BACK_COLOR), false)){
+                            if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_CHAT_BACK_COLOR), false)){
                                 img.setColorFilter(Prefs.getInt(Keys.KEY_CHAT_BACK_COLOR, Colors.warnaAutoTitle()), PorterDuff.Mode.SRC_IN);
                             }else {
                                 img.setColorFilter(Colors.warnaAutoTitle(), PorterDuff.Mode.SRC_IN);

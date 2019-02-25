@@ -1,7 +1,6 @@
 package id.delta.whatsapp.status;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,10 +15,7 @@ import com.whatsapp.statusplayback.StatusPlaybackActivity;
 
 import java.util.ArrayList;
 
-import id.delta.whatsapp.activities.MainActivity;
 import id.delta.whatsapp.home.fragments.BaseFragment;
-import id.delta.whatsapp.home.fragments.StatusesAdapter;
-import id.delta.whatsapp.utils.RTLUtils;
 import id.delta.whatsapp.utils.Tools;
 
 public class FragmentStatus extends BaseFragment {

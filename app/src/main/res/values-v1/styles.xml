@@ -66,4 +66,9 @@
         <item name="android:windowBackground">@color/delta_black50</item>
         <item name="android:windowShowWallpaper">true</item>
     </style>
+
+    <style name="SplashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/delta_splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>

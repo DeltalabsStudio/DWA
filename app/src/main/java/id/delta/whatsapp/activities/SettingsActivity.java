@@ -78,11 +78,7 @@ public class SettingsActivity extends BaseActivity implements SettingsFragment.C
             if (isRestart) {
                 Actions.restartApp();
             }else {
-                if(Prefs.getInt("home", STOCK)==STOCK){
-                    Actions.reCreate(this, HomeActivity.class);
-                }else {
-                    Actions.reCreate(this, MainActivity.class);
-                }
+                Actions.reCreate(this, HomeActivity.class);
             }
         } else {
             getFragmentManager().popBackStack();

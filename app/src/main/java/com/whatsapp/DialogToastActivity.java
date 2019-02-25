@@ -1,6 +1,7 @@
 package com.whatsapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -26,6 +27,7 @@ import id.delta.whatsapp.utils.Prefs;
 import id.delta.whatsapp.utils.Tools;
 import id.delta.whatsapp.utils.WaPrefs;
 import id.delta.whatsapp.value.Wallpaper;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
 /**
@@ -113,5 +115,9 @@ public class DialogToastActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 }
 

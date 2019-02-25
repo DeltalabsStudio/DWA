@@ -24,11 +24,11 @@ public class OnPageSelected {
         }else {
             mTopLayout.setVisibility(View.VISIBLE);
             mHome.mCurvedNavigation.setVisibility(View.VISIBLE);
-            if(mPosisi == 1){
+            if(mPosisi == mHome.mCurvedNavigation.CHAT){
                 mHome.mCurvedNavigation.onStartSelected();
-            }else if(mPosisi == 2) {
+            }else if(mPosisi == mHome.mCurvedNavigation.STATUS) {
                 mHome.mCurvedNavigation.onCenterSelected();
-            }else if(mPosisi == 3){
+            }else if(mPosisi == mHome.mCurvedNavigation.CALL){
                 mHome.mCurvedNavigation.onEndSelected();
             }
         }

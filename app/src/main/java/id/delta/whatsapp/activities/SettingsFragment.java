@@ -114,6 +114,9 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
             case Keys.KEY_REPORT_PROBLEM:
                 SettingsActivity.isRestart = true;
                 break;
+            case Keys.KEY_CUSTOM_FONT:
+                SettingsActivity.isRestart = true;
+                break;
         }
     }
 

@@ -7,13 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
-import android.provider.ContactsContract;
 
 import com.whatsapp.AppShell;
 import com.whatsapp.HomeActivity;
 import com.whatsapp.plus.ReadLogFile;
 
-import id.delta.whatsapp.activities.MainActivity;
 import id.delta.whatsapp.activities.SettingsActivity;
 
 /**
@@ -105,11 +103,7 @@ public class Actions {
     }
 
     public static Class defaultHome(){
-        if(Prefs.getBoolean(Keys.KEY_DEFAUL_HOME, false)){
-            return MainActivity.class;
-        }else{
-            return HomeActivity.class;
-        }
+        return HomeActivity.class;
     }
 
 }

@@ -1,15 +1,11 @@
 package id.delta.whatsapp.activities;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -20,15 +16,12 @@ import java.lang.reflect.Method;
 import java.util.Observable;
 import java.util.Observer;
 
-import id.delta.whatsapp.R;
-import id.delta.whatsapp.dialog.DialogSelect;
 import id.delta.whatsapp.split.presenter.NotificationCenter;
 import id.delta.whatsapp.split.presenter.NotificationName;
 import id.delta.whatsapp.split.service.DataStorage;
 import id.delta.whatsapp.ui.views.CurvedBottom;
 import id.delta.whatsapp.ui.views.FloatingActionButton;
 import id.delta.whatsapp.utils.Tools;
-import id.delta.whatsapp.value.Themes;
 
 public class VideoActivity extends BaseActivity implements View.OnClickListener {
 

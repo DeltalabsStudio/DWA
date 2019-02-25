@@ -97,6 +97,7 @@ public class NavigationDrawerItem extends RelativeLayout implements View.OnClick
         setGravity(Gravity.CENTER_VERTICAL);
 
         setOnClickListener(this);
+
     }
 
     @Override

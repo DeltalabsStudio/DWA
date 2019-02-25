@@ -60,6 +60,7 @@ public class Keys {
     public static final String KEY_STATUSTITLE_COLOR = "key_status_title_picker";
     public static final String KEY_STATUSSEEN_COLOR = "key_status_seen_picker";
     public static final String KEY_STATUSUNSEEN_COLOR = "key_status_unseen_picker";
+    public static final String KEY_HIDESTATUS = "key_hide_status";
 
     //Drawer
     public static final String KEY_DRAWER_BG = "key_drawer_bg_picker";
@@ -118,9 +119,7 @@ public class Keys {
     public static final String KEY_CUSTOM_ICON = "key_custom_icons";
     public static final String KEY_CUSTOM_ICON_COPYED = "key_custom_icon_copyed";
 
-
-    public static String CHECK(String key){
-        return key.replace("_picker", "_check");
-    }
+    //Custom Font
+    public static final String KEY_CUSTOM_FONT = "key_custom_font";
 
 }

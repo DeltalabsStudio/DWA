@@ -59,7 +59,7 @@ public class Colors {
     }
 
     public static int setWarnaPrimer (){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_PRIMARY_COLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_PRIMARY_COLOR), false)){
             return Prefs.getInt(Keys.KEY_PRIMARY_COLOR, Colors.primaryColor);
         }else {
             return Colors.primaryColor;
@@ -67,7 +67,7 @@ public class Colors {
     }
 
     public static int setWarnaAksen (){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_ACCENT_COLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_ACCENT_COLOR), false)){
             return Prefs.getInt(Keys.KEY_ACCENT_COLOR, Colors.accentColor);
         }else {
             return Colors.accentColor;
@@ -99,7 +99,7 @@ public class Colors {
     }
 
     public static int naviconColor(int active){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_NAVICON_COLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_NAVICON_COLOR), false)){
             return Prefs.getInt(Keys.KEY_NAVICON_COLOR, warnaNavigation(active));
         }else {
             return warnaNavigation(active);
@@ -116,7 +116,7 @@ public class Colors {
     }
 
     public static int warnaFab(){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_FABCOLOR), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_FABCOLOR), false)){
             return Prefs.getInt(Keys.KEY_FABCOLOR, setWarnaAksen());
         }else {
             return setWarnaAksen();
@@ -124,7 +124,7 @@ public class Colors {
     }
 
     public static int warnaFabIcon(){
-        if(Prefs.getBoolean(Keys.CHECK(Keys.KEY_FABICON), false)){
+        if(Prefs.getBoolean(Tools.CHECK(Keys.KEY_FABICON), false)){
             return Prefs.getInt(Keys.KEY_FABICON, warnaAutoIconFab());
         }else {
             return warnaAutoIconFab();

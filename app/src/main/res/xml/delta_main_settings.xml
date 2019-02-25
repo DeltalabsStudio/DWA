@@ -65,6 +65,16 @@
         android:layout="@layout/delta_preference_category"
         android:title="Other"/>
 
+    <CheckBoxPreference
+        android:icon="@drawable/delta_ic_fancytext"
+        android:layout="@layout/delta_preference_layout"
+        android:widgetLayout="@layout/delta_preference_widget_switch"
+        android:title="@string/pref_custom_font"
+        android:key="key_custom_font"
+        android:summaryOff="Disable"
+        android:summaryOn="Enable"
+        android:defaultValue="false" />
+
     <id.delta.whatsapp.views.preference.SeekBarPreference
         android:enabled="false"
         android:icon="@drawable/delta_ic_contact"
