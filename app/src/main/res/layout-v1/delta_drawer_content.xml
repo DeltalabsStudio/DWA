@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<id.delta.whatsapp.home.stock.DrawerItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="300.0dp"
+    android:id="@+id/mDrawerItem"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/mDrawerHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="196.0dp"
+                android:layout_marginBottom="8.0dip">
+
+                <com.flaviofaria.kenburnsview.KenBurnsView
+                    android:id="@+id/mCover"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <com.whatsapp.ThumbnailButton
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/delta_transparent"
+                    android:id="@+id/mProfilePicture"
+                    android:layout_width="64.0dip"
+                    android:layout_height="64.0dip"
+                    android:layout_marginStart="16.0dip"
+                    android:src="@drawable/avatar_contact" />
+
+                <LinearLayout
+                    android:layout_gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16.0dip"
+                    android:layout_marginStart="16.0dip"
+                    android:orientation="vertical">
+
+                    <com.whatsapp.WaTextView
+                        android:id="@+id/mName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deltalabs Studio"
+                        android:textColor="#ff000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.whatsapp.WaTextView
+                        android:id="@+id/mNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4.0dip"
+                        android:text="+62 8 22 0000-0000"
+                        android:textColor="#ff555555"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_gravity="bottom"
+                    android:background="?android:listDivider" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/r1"
+                    android:clickable="true"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dp">
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:id="@+id/i1"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:src="@drawable/ic_action_archive"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16.0dip" />
+
+                    <TextView android:textSize="15sp"
+                        android:textColor="?android:textColorSecondary"
+                        android:id="@+id/l1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/archived_chats"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="72.0dip" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/r2"
+                    android:clickable="true"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dp">
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:id="@+id/i2"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:src="@drawable/ic_action_star"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16.0dip" />
+
+                    <TextView android:textSize="15sp"
+                        android:textColor="?android:textColorSecondary"
+                        android:id="@+id/l2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/starred_messages"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="72.0dip" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/r3"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dp">
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:id="@+id/i3"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:src="@drawable/notify_web_client_connected"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16.0dip" />
+
+                    <TextView android:textSize="15sp"
+                        android:textColor="?android:textColorSecondary"
+                        android:id="@+id/l3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/whatsapp_web"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="72.0dip" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/r4"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dp">
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:id="@+id/i4"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:src="@drawable/delta_ic_addgroup"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16.0dip" />
+
+                    <TextView android:textSize="15sp"
+                        android:textColor="?android:textColorSecondary"
+                        android:id="@+id/l4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menuitem_groupchat"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="72.0dip" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/r5"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dp">
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:id="@+id/i5"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:src="@drawable/delta_ic_notif"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16.0dip" />
+
+                    <TextView android:textSize="15sp"
+                        android:textColor="?android:textColorSecondary"
+                        android:id="@+id/l5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menuitem_list"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="72.0dip" />
+
+                </RelativeLayout>
+                <View
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="?android:listDivider" />
+
+                <RelativeLayout
+                    android:id="@+id/r6"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dp">
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:id="@+id/i6"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:src="@drawable/delta_ic_security"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16.0dip" />
+
+                    <TextView android:textSize="15sp"
+                        android:textColor="?android:textColorSecondary"
+                        android:id="@+id/l6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/delta_privacy"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="72.0dip" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/r7"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dp">
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:id="@+id/i7"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:src="@drawable/delta_ic_settings"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16.0dip" />
+
+                    <TextView android:textSize="15sp"
+                        android:textColor="?android:textColorSecondary"
+                        android:id="@+id/l7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/delta_settings"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="72.0dip" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/r0"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dp">
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:id="@+id/i0"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:src="@drawable/delta_ic_more"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16.0dip" />
+
+                    <TextView android:textSize="15sp"
+                        android:textColor="?android:textColorSecondary"
+                        android:id="@+id/l0"
+                        android:layout_marginEnd="36dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/more"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="72.0dip" />
+
+                    <id.delta.whatsapp.ui.accent.AccentImageView
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/mDropdown"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/delta_ic_dropdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_marginBottom="56.0dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/delta_settings_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="?android:listDivider"
+        android:layout_alignParentEnd="true"/>
+
+</id.delta.whatsapp.home.stock.DrawerItem>
